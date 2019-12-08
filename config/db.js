@@ -2,13 +2,10 @@ const mysql = require("mysql");
 const config = require("config");
 const db = config.get("mysqlURI");
 
-const connection = mysql.createConnection(db);
-connection.connect((error) => {
-  if (error) {
-    console.log(error)
-  } else {
-    console.log("MySQL connected.")
-  }
-})
+const connection = mysql.createPool(db)
+
+connection.on("error", err => {
+    console.log("MySQL error: " + err.toString());
+});
 
 module.exports = connection;
