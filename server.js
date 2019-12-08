@@ -3,10 +3,17 @@ const connection = require("./config/db");
 
 const app = express();
 
+// Init Middleware
+app.use(express.json({ extended: false }));
 
-app.get('/', (req, res) => {
-  res.json({ msg: 'Welcome to home page'})
-})
+app.get("/", (req, res) => {
+  res.json({ msg: "Welcome to home page" });
+});
+
+// Define Routes
+app.use("/api/users", require("./routes/api/users"));
+app.use("/api/auth", require("./routes/api/auth"));
+app.use("/api/projects", require("./routes/api/projects"));
 
 // Node connection
 const hostname = "0.0.0.0";
