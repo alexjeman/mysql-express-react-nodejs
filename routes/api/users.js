@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const config = require("config");
 const connection = require("../../config/db");
 const { check, validationResult } = require("express-validator");
 
@@ -25,13 +27,13 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
     const { name, email, password } = req.body;
-    const newUser = {
+    const user = {
       name,
       email,
       password
     };
     const salt = await bcrypt.genSalt(10);
-    newUser.password = await bcrypt.hash(req.body.password, salt);
+    user.password = await bcrypt.hash(req.body.password, salt);
     try {
       let sql = `SELECT * FROM users WHERE email = "${email}"`;
       connection.query(sql, async (err, results) => {
@@ -39,12 +41,26 @@ router.post(
         if (!!results.length) {
           return res.status(400).json({ msg: "User already exists" });
         } else {
-          let sqlInsert = `INSERT INTO users (name, email, password) VALUES ("${newUser.name}", "${newUser.email}", "${newUser.password}")`;
+          let sqlInsert = `INSERT INTO users (name, email, password) VALUES ("${user.name}", "${user.email}", "${user.password}")`;
           await connection.query(sqlInsert, (err, results) => {
             if (err) throw err;
           });
-          console.log("1 record inserted");
-          res.send("User created");
+          const payload = {
+            user: {
+              email: user.email
+            }
+          };
+          jwt.sign(
+            payload,
+            config.get("jwtSecret"),
+            {
+              expiresIn: 36000
+            },
+            (err, token) => {
+              if (err) throw err;
+              res.json({ token });
+            }
+          );
         }
       });
     } catch (error) {
