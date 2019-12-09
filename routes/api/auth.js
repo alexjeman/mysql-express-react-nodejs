@@ -44,7 +44,7 @@ router.post(
     const { email, password } = req.body;
     try {
       let sql = `SELECT password FROM users WHERE email = "${email}"`;
-      connection.query(sql, async (err, user) => {
+      await connection.query(sql, async (err, user) => {
         if (err) throw err;
         if (typeof user === "undefined" || !user.length) {
           return res.status(400).json({ msg: "Invalid credentials" });
