@@ -6,18 +6,28 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  line-height: 1.4rem;
+}
+
 :root {
-  --bg-dark: #181818;
-  --bg-dark-two: #1d1d1d;
+  --bg-dark-one: #1f1f1f;
+  --bg-dark-two: #282828;
+  --bg-dark-three: #1d1d1d;
   --color-white: #ffffff;
+  --color-darken: #888888;
+  --color-red: #e50b0b;
 }
 
 .navbar {
+  font-size: 0.9rem;
   position: absolute;
   transform: translateX(-60px);
   top: 0;
-  background: var(--bg-dark);
-  color: var(--color-white);
+  background: var(--bg-dark-two);
+  color: var(--color-darken);
   text-align: center;
   height: 100vh;
   min-height: 500px;
@@ -26,26 +36,67 @@
   overflow: auto;
 }
 
-.navbar i {
-  font-size: 2rem;
+.navbar .text-logo {
+  color: var(--color-white);
 }
 
-.navbar a {
-  color: var(--color-white);
+.navbar i {
+  color: var(--color-darken);
+  font-size: 1.8rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.navbar .social .fa-info-circle {
+  font-size: 1.6rem;
+}
+
+.navbar nav a {
+  height: 50px;
+  margin-bottom: 5px;
+  display: block;
+  color: var(--color-darken);
   width: 100%;
+  transition: all 0.3s ease-out;
+}
+
+.navbar .social a i:hover,
+.navbar nav a b:hover {
+  color: #ffd8d8;
+  text-shadow: 0 0 10px var(--color-red), 0 0 40px var(--color-red),
+    0 0 10px var(--color-red);
+}
+
+.navbar nav b {
+  padding: 5px;
+  display: none;
+}
+
+.navbar nav a:hover b {
+  display: block;
+  color: #ffd8d8;
+  text-shadow: 0 0 10px var(--color-red), 0 0 40px var(--color-red),
+    0 0 10px var(--color-red);
+}
+
+.navbar nav a:hover i {
+  display: none;
 }
 
 .navbar nav {
   display: block;
   text-align: center;
-  margin-top: 30vh;
+  margin-top: 25vh;
 }
 
 .navbar .social {
   position: absolute;
   width: 60px;
   text-align: center;
-  bottom: 2vh;
+  bottom: 2.7vh;
+}
+
+.navbar .social a {
+  display: block;
 }
 
 .app-logo {
@@ -55,14 +106,12 @@
 }
 
 body {
-  background: #1d1d1d;
+  background: var(--bg-dark-one);
   color: var(--color-white);
 }
 
-
-
-.App {
-  margin-left: 60px;
+.container {
+  padding-left: 60px;
 }
 
 @keyframes App-logo-spin {

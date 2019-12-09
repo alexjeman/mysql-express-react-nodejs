@@ -3,25 +3,37 @@ import logo from "../../cute-skull.png";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ title }) => {
+const Navbar = ({ title, iconHome, iconSkills, iconProjects, iconAbout, iconContact, iconGithub, iconInfo }) => {
   return (
     <div className='navbar'>
       <Link to='/' alt="logo">
         <img src={logo} className='app-logo' alt='AJ' />
         <div className='text-logo'>{title}</div>
       </Link>
-      <nav className='nav'>
-        <a href=''></a>
-      </nav>
       <nav>
-        <div>Visitor Links</div>
-        <div>Admin Links</div>
+        <Link to="/">
+          <i className={iconHome}></i><b>Home</b>
+        </Link>
+        <Link to="/projects">
+          <i className={iconProjects}></i><b>Work</b>
+        </Link>
+        <Link to="/skills">
+          <i className={iconSkills}></i><b>Skills</b>
+        </Link>
+        <Link to="/contact">
+          <i className={iconContact}></i><b>Contact</b>
+        </Link>
+        <Link to="/about">
+          <i className={iconAbout}></i><b>About</b>
+        </Link>
       </nav>
       <div className="social" >
         <a href='https://github.com/alexandrujeman' target="_blank" rel="noopener noreferrer">
-          <i className='fab fa-github-alt'></i>
+          <i className={iconGithub}></i>
         </a>
-        <li>Social Link 2</li>
+        <Link to='/info' alt="logo">
+          <i className={iconInfo}></i>
+        </Link>
       </div>
     </div>
   );
@@ -33,7 +45,14 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  title: "Alex"
+  title: "Alex",
+  iconGithub: "fab fa-github-alt",
+  iconAbout: "fas fa-heartbeat",
+  iconHome: "fas fa-home",
+  iconProjects: "fas fa-flask",
+  iconContact: "fas fa-satellite-dish",
+  iconSkills: "fas fa-dna",
+  iconInfo: "fas fa-info-circle"
 };
 
 export default Navbar;
