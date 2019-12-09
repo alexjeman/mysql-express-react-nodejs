@@ -4,13 +4,23 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const connection = require("../../config/db");
+const auth = require("../../middleware/auth");
 const { check, validationResult } = require("express-validator");
 
 // @route GET api/auth
 // @desc GET logged in user
 // @access Private
-router.get("/", (req, res) => {
-  res.send("Get logged in user");
+router.get("/", auth, async (req, res) => {
+  try {
+    let sql = `SELECT id, name, email, date  FROM users WHERE email = "${req.user.email}"`;
+    connection.query(sql, async (err, user) => {
+      if (err) throw err;
+      res.json(user);
+    });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Server Error");
+  }
 });
 
 // @route POST api/auth
@@ -33,7 +43,7 @@ router.post(
 
     const { email, password } = req.body;
     try {
-      let sql = `SELECT * FROM users WHERE email = "${email}"`;
+      let sql = `SELECT password FROM users WHERE email = "${email}"`;
       connection.query(sql, async (err, user) => {
         if (err) throw err;
         if (typeof user === "undefined" || !user.length) {
