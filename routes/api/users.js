@@ -35,7 +35,7 @@ router.post(
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(req.body.password, salt);
     try {
-      let sql = `SELECT * FROM users WHERE email = "${email}"`;
+      let sql = `SELECT email FROM users WHERE email = "${email}"`;
       connection.query(sql, async (err, results) => {
         if (err) throw err;
         if (!!results.length) {
