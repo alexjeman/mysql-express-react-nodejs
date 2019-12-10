@@ -14,7 +14,7 @@ const Navbar = ({ title, iconHome, iconSkills, iconProjects, iconAbout, iconCont
         <Link to="/">
         <i className="material-icons-outlined">{iconHome}</i><b>Home</b>
         </Link>
-        <Link to="/projects">
+        <Link to="/work">
           <i className={iconProjects}></i><b>Work</b>
         </Link>
         <Link to="/skills">
