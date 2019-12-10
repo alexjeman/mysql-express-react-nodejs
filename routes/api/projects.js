@@ -9,10 +9,10 @@ const { check, validationResult } = require("express-validator");
 // @access Public
 router.get("/", async (req, res) => {
   try {
-    let sql = `SELECT user, project_name, project_description, project_link, project_img FROM projects`;
-    connection.query(sql, async (err, user) => {
+    let sql = `SELECT user, project_name, project_description, project_sample, project_link, project_img FROM projects`;
+    connection.query(sql, async (err, projects) => {
       if (err) throw err;
-      res.json(user);
+      res.json(projects);
     });
   } catch (error) {
     console.error(error.message);
@@ -41,6 +41,7 @@ router.post(
     const {
       project_name,
       project_description,
+      project_sample,
       project_link,
       project_img
     } = req.body;
@@ -49,11 +50,12 @@ router.post(
       user: req.user.email,
       project_name,
       project_description,
+      project_sample,
       project_link,
       project_img
     };
     try {
-      let sqlInsert = `INSERT INTO projects (user, project_name, project_description, project_link, project_img) VALUES ("${project.user}", "${project.project_name}", "${project.project_description}", "${project.project_link}", "${project.project_img}")`;
+      let sqlInsert = `INSERT INTO projects (user, project_name, project_description, project_sample, project_link, project_img) VALUES ("${project.user}", "${project.project_name}", "${project.project_description}", "${project.project_sample}", "${project.project_link}", "${project.project_img}")`;
       await connection.query(sqlInsert, (err, results) => {
         if (err) throw err;
         res.json(project);
@@ -73,6 +75,7 @@ router.put("/:id", auth, async (req, res) => {
     user,
     project_name,
     project_description,
+    project_sample,
     project_link,
     project_img
   } = req.body;
@@ -81,6 +84,7 @@ router.put("/:id", auth, async (req, res) => {
   if (user) projectFields.user = user;
   if (project_name) projectFields.project_name = project_name;
   if (project_description) projectFields.project_description = project_description;
+  if (project_sample) projectFields.project_sample = project_sample;
   if (project_link) projectFields.project_link = project_link;
   if (project_img) projectFields.project_img = project_img;
 
@@ -96,7 +100,7 @@ router.put("/:id", auth, async (req, res) => {
         return res.status(401).json({ msg: "Not authorized" });
       }
       // Update project
-      let sql = `UPDATE projects SET project_name = "${projectFields.project_name}", project_description = "${projectFields.project_description}", project_link = "${projectFields.project_link}", project_img = "${projectFields.project_img}" WHERE id = "${req.params.id}"`;
+      let sql = `UPDATE projects SET project_name = "${projectFields.project_name}", project_description = "${projectFields.project_description}", project_sample= "${projectFields.project_sample}", project_link = "${projectFields.project_link}", project_img = "${projectFields.project_img}" WHERE id = "${req.params.id}"`;
       await connection.query(sql, async (err, project) => {
         if (err) throw err;
         // Return new project
