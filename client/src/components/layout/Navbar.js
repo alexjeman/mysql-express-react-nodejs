@@ -12,7 +12,7 @@ const Navbar = ({ title, iconHome, iconSkills, iconProjects, iconAbout, iconCont
       </Link>
       <nav>
         <Link to="/">
-          <i className={iconHome}></i><b>Home</b>
+        <i className="material-icons-outlined">{iconHome}</i><b>Home</b>
         </Link>
         <Link to="/projects">
           <i className={iconProjects}></i><b>Work</b>
@@ -21,10 +21,10 @@ const Navbar = ({ title, iconHome, iconSkills, iconProjects, iconAbout, iconCont
           <i className={iconSkills}></i><b>Skills</b>
         </Link>
         <Link to="/contact">
-          <i className={iconContact}></i><b>Contact</b>
+        <i className="material-icons-outlined">{iconContact}</i><b>Contact</b>
         </Link>
         <Link to="/about">
-          <i className={iconAbout}></i><b>About</b>
+        <i className={iconAbout}></i><b>About</b>
         </Link>
       </nav>
       <div className="social" >
@@ -32,7 +32,7 @@ const Navbar = ({ title, iconHome, iconSkills, iconProjects, iconAbout, iconCont
           <i className={iconGithub}></i>
         </a>
         <Link to='/info' alt="logo">
-          <i className={iconInfo}></i>
+          <i className="material-icons-outlined">{iconInfo}</i>
         </Link>
       </div>
     </div>
@@ -48,11 +48,11 @@ Navbar.defaultProps = {
   title: "Alex",
   iconGithub: "fab fa-github-alt",
   iconAbout: "fas fa-heartbeat",
-  iconHome: "fas fa-home",
+  iconHome: "home",
   iconProjects: "fas fa-flask",
-  iconContact: "fas fa-satellite-dish",
+  iconContact: "email",
   iconSkills: "fas fa-dna",
-  iconInfo: "fas fa-info-circle"
+  iconInfo: "info"
 };
 
 export default Navbar;
