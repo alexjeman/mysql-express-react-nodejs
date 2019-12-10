@@ -16,6 +16,7 @@ const ProjectState = props => {
   const initialState = {
     projects: [
       {
+        "id": "1",
         "user": "alexandrujeman.ja@gmail.com",
         "project_name": "Appraisal System",
         "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",
@@ -24,6 +25,7 @@ const ProjectState = props => {
         "project_img": "http://www.cimec.co.za/wp-content/uploads/2018/07/4-Unique-Placeholder-Image-Services-for-Designers.png"
       },
       {
+        "id": "2",
         "user": "alexandrujeman.ja@gmail.com",
         "project_name": "Tribute Page",
         "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",

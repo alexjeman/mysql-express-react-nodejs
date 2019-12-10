@@ -9,7 +9,7 @@ const { check, validationResult } = require("express-validator");
 // @access Public
 router.get("/", async (req, res) => {
   try {
-    let sql = `SELECT user, project_name, project_description, project_sample, project_link, project_img FROM projects`;
+    let sql = `SELECT id, user, project_name, project_description, project_sample, project_link, project_img FROM projects`;
     connection.query(sql, async (err, projects) => {
       if (err) throw err;
       res.json(projects);
