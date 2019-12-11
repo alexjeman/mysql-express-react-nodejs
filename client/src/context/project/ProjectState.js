@@ -18,8 +18,8 @@ const ProjectState = props => {
       {
         "id": "1",
         "user": "alexandrujeman.ja@gmail.com",
-        "project_name": "Appraisal System",
-        "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",
+        "project_name": "Appraisal System 1",
+        "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, ",
         "project_sample": "https://github.com/alexandrujeman/appraisal-system",
         "project_link": "http://alexjeman.com",
         "project_img": "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
@@ -27,8 +27,8 @@ const ProjectState = props => {
       {
         "id": "2",
         "user": "alexandrujeman.ja@gmail.com",
-        "project_name": "Tribute Page",
-        "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",
+        "project_name": "Tribute Page 2",
+        "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia",
         "project_sample": "https://github.com/alexandrujeman/appraisal-system",
         "project_link": "http://alexjeman.com",
         "project_img": "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
@@ -36,7 +36,7 @@ const ProjectState = props => {
       {
         "id": "3",
         "user": "alexandrujeman.ja@gmail.com",
-        "project_name": "Tribute Page",
+        "project_name": "Tribute Page 3",
         "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",
         "project_sample": "https://github.com/alexandrujeman/appraisal-system",
         "project_link": "http://alexjeman.com",
@@ -45,7 +45,7 @@ const ProjectState = props => {
       {
         "id": "4",
         "user": "alexandrujeman.ja@gmail.com",
-        "project_name": "Tribute Page",
+        "project_name": "Tribute Page 4",
         "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",
         "project_sample": "https://github.com/alexandrujeman/appraisal-system",
         "project_link": "http://alexjeman.com",
