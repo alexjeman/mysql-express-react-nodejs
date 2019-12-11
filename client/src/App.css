@@ -1,3 +1,6 @@
+/***** Reset
+**************************/
+
 * {
   margin: 0;
   padding: 0;
@@ -12,18 +15,25 @@ body {
   line-height: 1.4rem;
 }
 
+/***** Variables
+**************************/
+
 :root {
   --bg-dark-one: #1f1f1f;
   --bg-dark-two: #282828;
   --bg-dark-three: #1d1d1d;
   --bg-dark-four: #00000033;
+  --bg-dark-transparent: #2d303a4d;
   --color-white: #ffffff;
   --color-darken: #888888;
   --color-red: #e32d0d;
   --neon-primary: #e42427;
   --neon-secondary: #ffbdbd;
-  --linear-gradient-one: linear-gradient(to right bottom, #173332, #306167);
+  --linear-gradient-one: linear-gradient(to right, #ff29ff57, #4fff6c7e);
 }
+
+/***** Nav
+**************************/
 
 .navbar {
   font-size: 0.9rem;
@@ -45,18 +55,18 @@ body {
   color: var(--color-white);
 }
 
-.navbar i {
-  color: var(--color-darken);
-  font-size: 1.6rem;
-  transition: all 0.1s ease-in-out;
-}
-
 .navbar nav .material-icons-outlined {
   font-size: 2rem;
 }
 
 .navbar .social .fa-info-circle {
   font-size: 1.5rem;
+}
+
+.navbar i {
+  color: var(--color-darken);
+  font-size: 1.6rem;
+  transition: all 0.1s ease-in-out;
 }
 
 .navbar nav a {
@@ -131,7 +141,8 @@ body {
   position: relative;
 }
 
-/* Project page display */
+/***** Project Page
+**************************/
 
 .project-container {
   width: 90%;
@@ -151,9 +162,11 @@ body {
   margin: 0 auto;
   width: 49vh;
   height: 43vh;
+  object-fit: cover;
 }
 
 .card-side {
+  overflow: hidden;
   position: relative;
   transition: all 0.8s ease;
   position: absolute;
@@ -171,6 +184,7 @@ body {
   width: 100%;
   height: 100%;
   background: var(--bg-dark-two);
+  text-align: center;
 }
 
 .card-side-back {
@@ -178,6 +192,13 @@ body {
   height: 100%;
   background: var(--bg-dark-two);
   transform: rotateY(180deg);
+}
+
+.card-side-front .project-name {
+  width: 100%;
+  position: absolute;
+  background: var(--bg-dark-transparent);
+  bottom: 0;
 }
 
 .card:hover .card-side-front {
@@ -188,9 +209,10 @@ body {
   transform: rotateY(0);
 }
 
-/* Media Queries */
+/***** Media Queries 
+**************************/
 
-@media screen and (max-height: 340px) {
+@media screen and (max-height: 331px) {
   .navbar nav {
     transform: translateY(0rem);
   }
@@ -301,7 +323,7 @@ body {
     font-size: 3rem;
   }
 
-  .navbar nav a{
+  .navbar nav a {
     padding-bottom: 5rem;
   }
 

@@ -22,7 +22,7 @@ const ProjectState = props => {
         "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",
         "project_sample": "https://github.com/alexandrujeman/appraisal-system",
         "project_link": "http://alexjeman.com",
-        "project_img": "http://www.cimec.co.za/wp-content/uploads/2018/07/4-Unique-Placeholder-Image-Services-for-Designers.png"
+        "project_img": "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
       },
       {
         "id": "2",
@@ -31,7 +31,7 @@ const ProjectState = props => {
         "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",
         "project_sample": "https://github.com/alexandrujeman/appraisal-system",
         "project_link": "http://alexjeman.com",
-        "project_img": "http://www.cimec.co.za/wp-content/uploads/2018/07/4-Unique-Placeholder-Image-Services-for-Designers.png"
+        "project_img": "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
       },
       {
         "id": "3",
@@ -40,7 +40,7 @@ const ProjectState = props => {
         "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",
         "project_sample": "https://github.com/alexandrujeman/appraisal-system",
         "project_link": "http://alexjeman.com",
-        "project_img": "http://www.cimec.co.za/wp-content/uploads/2018/07/4-Unique-Placeholder-Image-Services-for-Designers.png"
+        "project_img": "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
       },
       {
         "id": "4",
@@ -49,7 +49,7 @@ const ProjectState = props => {
         "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",
         "project_sample": "https://github.com/alexandrujeman/appraisal-system",
         "project_link": "http://alexjeman.com",
-        "project_img": "http://www.cimec.co.za/wp-content/uploads/2018/07/4-Unique-Placeholder-Image-Services-for-Designers.png"
+        "project_img": "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
       }
     ]
   }

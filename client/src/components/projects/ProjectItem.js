@@ -12,13 +12,13 @@ const ProjectItem = ({ project }) => {
     <div className='project-card'>
       <div className='card'>
         <div className='card-side card-side-front'>
-          <h3>{project_name}</h3>
+          <h3 className='project-name'>{project_name}</h3>
           <img src={project_img} alt='' />
         </div>
         <div className='card-side card-side-back'>
           <p>{project_description}</p>
-          <a href={project_sample}>Code</a>
-          <a href={project_link}>Live</a>
+          <a href={project_sample}>Code Sample</a>
+          <a href={project_link}>View Live</a>
         </div>
       </div>
     </div>
