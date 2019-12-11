@@ -28,15 +28,16 @@ body {
 .navbar {
   font-size: 0.9rem;
   position: absolute;
+  position: fixed;
   transform: translateX(-60px);
   top: 0;
   background: var(--bg-dark-two);
   color: var(--color-darken);
   text-align: center;
-  height: 100vh;
-  min-height: 600px;
+  height: 100%;
   z-index: 7;
-  width: 60px;
+  width: 3.125%;
+  min-width: 60px;
   overflow: auto;
 }
 
@@ -93,12 +94,14 @@ body {
 .navbar nav {
   display: block;
   text-align: center;
-  margin-top: 25vh;
+  transform: translateY(90%);
 }
 
 .navbar .social {
   position: absolute;
-  width: 60px;
+  width: 3.125%;
+  min-width: 60px;
+  width: 100%;
   text-align: center;
   bottom: 2.7vh;
 }
@@ -119,34 +122,43 @@ body {
 }
 
 .container {
-  padding-left: 60px;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  margin-left: 60px;
+  overflow: hidden;
+  position: relative;
 }
 
 /* Project page display */
 
 .project-container {
-  width: 80%;
+  width: 90%;
+  display: block;
+  margin: 1rem auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
-  grid-gap: 50px;
-  margin: 50px auto 80px auto;
+  gap: 1rem 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(44vh, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(41vh, 1fr));
+  justify-items: center;
 }
 
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 25rem;
-  width: 25rem;
+  margin: 0 auto;
+  width: 49vh;
+  height: 43vh;
 }
 
 .card-side {
-  height: 25rem;
+  position: relative;
   transition: all 0.8s ease;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   backface-visibility: hidden;
   border-radius: 3px;
 }
@@ -156,12 +168,14 @@ body {
 }
 
 .card-side-front {
-  height: 25rem;
+  width: 100%;
+  height: 100%;
   background: var(--bg-dark-two);
 }
 
 .card-side-back {
-  height: 25rem;
+  width: 100%;
+  height: 100%;
   background: var(--bg-dark-two);
   transform: rotateY(180deg);
 }
@@ -172,4 +186,142 @@ body {
 
 .card:hover .card-side-back {
   transform: rotateY(0);
+}
+
+/* Media Queries */
+
+@media screen and (max-height: 340px) {
+  .navbar nav {
+    transform: translateY(0rem);
+  }
+
+  .navbar nav a {
+    margin-bottom: -3px;
+  }
+
+  .navbar .social {
+    display: none;
+  }
+}
+
+@media screen and (min-height: 300px) {
+  .navbar nav {
+    transform: translateY(0rem);
+  }
+
+  .navbar nav a {
+    margin-bottom: -3px;
+  }
+}
+
+@media screen and (min-height: 350px) {
+  .navbar nav {
+    transform: translateY(1rem);
+  }
+
+  .navbar nav a {
+    margin-bottom: -3px;
+  }
+}
+
+@media screen and (min-height: 400px) {
+  .navbar nav {
+    transform: translateY(2.2rem);
+  }
+}
+
+@media screen and (min-height: 550px) {
+  .navbar nav {
+    transform: translateY(4rem);
+  }
+}
+
+@media screen and (min-height: 600px) {
+  .navbar nav {
+    transform: translateY(6rem);
+  }
+}
+
+@media screen and (min-height: 650px) {
+  .navbar nav {
+    transform: translateY(7.5rem);
+  }
+}
+
+@media screen and (min-height: 700px) {
+  .navbar nav {
+    transform: translateY(9.5rem);
+  }
+}
+
+@media screen and (min-height: 750px) {
+  .navbar nav {
+    transform: translateY(10rem);
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .navbar nav {
+    transform: translateY(12rem);
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .navbar nav {
+    transform: translateY(16rem);
+  }
+
+  .project-container {
+    margin: 1.5rem auto;
+    gap: 3rem 3rem;
+  }
+}
+
+@media screen and (min-height: 1300px) {
+  .navbar nav {
+    transform: translateY(24rem);
+  }
+}
+
+@media screen and (min-height: 2100px) {
+  .navbar nav {
+    transform: translateY(47rem);
+  }
+
+  .container {
+    margin-left: 8rem;
+  }
+
+  .navbar {
+    transform: translateX(-8rem);
+    font-size: 2rem;
+  }
+
+  .navbar i {
+    font-size: 3rem;
+  }
+
+  .navbar nav a{
+    padding-bottom: 5rem;
+  }
+
+  .navbar .social a {
+    padding-bottom: 1.5rem;
+  }
+
+  .navbar nav .material-icons-outlined {
+    font-size: 4rem;
+  }
+
+  .app-logo {
+    height: 70px;
+    width: auto;
+    margin-top: 1.5vh;
+    padding-bottom: 0.5rem;
+  }
+
+  .project-container {
+    margin: 5rem auto;
+    gap: 5rem 3rem;
+  }
 }
