@@ -21,7 +21,7 @@ const Navbar = ({ title, iconHome, iconSkills, iconProjects, iconAbout, iconCont
           <i className={iconSkills}></i><b>Skills</b>
         </Link>
         <Link to="/contact">
-        <i className="material-icons-outlined">{iconContact}</i><b>Contact</b>
+        <i className={iconContact}></i><b>Contact</b>
         </Link>
         <Link to="/about">
         <i className={iconAbout}></i><b>About</b>
@@ -50,7 +50,7 @@ Navbar.defaultProps = {
   iconAbout: "fas fa-heartbeat",
   iconHome: "home",
   iconProjects: "fas fa-flask",
-  iconContact: "email",
+  iconContact: "fas fa-satellite",
   iconSkills: "fas fa-dna",
   iconInfo: "info"
 };
