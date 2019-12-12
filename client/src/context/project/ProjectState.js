@@ -51,7 +51,8 @@ const ProjectState = props => {
         "project_link": "http://alexjeman.com",
         "project_img": "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
       }
-    ]
+    ],
+    current: null
   }
 
   const [state, dispatch] = useReducer(projectReducer, initialState);
@@ -63,6 +64,10 @@ const ProjectState = props => {
   }
 
   // Delete project
+
+  const deleteProject = id => {
+    dispatch({ type: DELETE_PROJECT, payload: id })
+  }
 
   // Set current project
 
@@ -77,7 +82,8 @@ const ProjectState = props => {
     <ProjectContext.Provider
     value={{
       projects: state.projects,
-      addProject
+      addProject,
+      deleteProject
     }}>
     { props.children }
     </ProjectContext.Provider>
