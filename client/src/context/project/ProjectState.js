@@ -57,6 +57,10 @@ const ProjectState = props => {
   const [state, dispatch] = useReducer(projectReducer, initialState);
 
   // Add project
+  const addProject = project => {
+    project.id = uuid.v4();
+    dispatch({ type: ADD_PROJECT, payload: project })
+  }
 
   // Delete project
 
@@ -72,7 +76,8 @@ const ProjectState = props => {
   return (
     <ProjectContext.Provider
     value={{
-      projects: state.projects
+      projects: state.projects,
+      addProject
     }}>
     { props.children }
     </ProjectContext.Provider>
