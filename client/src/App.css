@@ -324,6 +324,27 @@ body {
   hyphens: auto;
 }
 
+/***** Admin Page 
+**************************/
+.admin-page-container {
+  display: flex;
+  width: 80%;
+  margin: 10% auto;
+}
+
+.admin-page-container .edit-form {
+  width: 40%;
+}
+
+.admin-page-container .project-list {
+  width: 40%;
+}
+
+.edit-form form {
+  display: flex;
+  flex-direction: column;
+}
+
 /***** Media Queries 
 **************************/
 
