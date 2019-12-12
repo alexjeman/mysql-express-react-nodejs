@@ -2,6 +2,7 @@ import React from "react";
 
 const ProjectItem = ({ project }) => {
   const {
+    id,
     project_name,
     project_description,
     project_sample,
@@ -17,8 +18,25 @@ const ProjectItem = ({ project }) => {
         </div>
         <div className='card-side card-side-back'>
           <p>{project_description}</p>
-          <a href={project_sample}>Code Sample</a>
-          <a href={project_link}>View Live</a>
+          <a href={"#popup" + id}>View Description</a>
+        </div>
+      </div>
+      <div className='popup' id={"popup" + id}>
+  <a href='#project-page' className='popup-close-main'>{" "}</a>
+        <div className='popup-content'>
+          <div className='popup-left'>
+            <img src={project_img} alt='' className='popup-img' />
+            <img src={project_img} alt='' className='popup-img' />
+          </div>
+          <div className='popup-right'>
+            <a href='#project-page' className='popup-close'>
+              <i class='fas fa-times'></i>
+            </a>
+            <h2 className='project-name'>{project_name}</h2>
+            <p className='popup-text'>{project_description}</p>
+            <a href={project_sample} target="_blank" rel="noopener noreferrer">Code Sample</a>
+            <a href={project_link} target="_blank" rel="noopener noreferrer">View Live</a>
+          </div>
         </div>
       </div>
     </div>
