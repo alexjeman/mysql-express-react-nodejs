@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectsEdit from "../admin/ProjectsEdit";
 import ProjectForm from "../admin/ProjectForm";
+import ProjectFilter from "../admin/ProjectFilter";
 
 const Admin = () => {
   return (
@@ -9,6 +10,7 @@ const Admin = () => {
         <ProjectForm />
       </div>
       <div className='project-list'>
+        <ProjectFilter />
         <ProjectsEdit />
       </div>
     </div>

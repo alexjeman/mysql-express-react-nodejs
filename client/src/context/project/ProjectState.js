@@ -60,7 +60,8 @@ const ProjectState = props => {
           "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
       }
     ],
-    current: null
+    current: null,
+    filtered: null
   };
 
   const [state, dispatch] = useReducer(projectReducer, initialState);
@@ -85,25 +86,35 @@ const ProjectState = props => {
   const clearCurrent = () => {
     dispatch({ type: CLEAR_CURRENT });
   };
+
   // Update project
   const updateProject = project => {
     dispatch({ type: UPDATE_PROJECT, payload: project });
   };
 
-
-  // Filter project
+  // Filter projects
+  const filterProjects = text => {
+    dispatch({ type: FILTER_PROJECTS, payload: text });
+  };
 
   // Clear filter
+  const clearFilter = () => {
+    dispatch({ type: CLEAR_FILTER });
+  };
+
   return (
     <ProjectContext.Provider
       value={{
         projects: state.projects,
         current: state.current,
+        filtered: state.filtered,
         addProject,
         updateProject,
         deleteProject,
         setCurrent,
-        clearCurrent
+        clearCurrent,
+        filterProjects,
+        clearFilter
       }}
     >
       {props.children}
