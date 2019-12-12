@@ -15,6 +15,13 @@ export default (state, action) => {
         ...state,
         projects: [...state.projects, action.payload]
       };
+    case UPDATE_PROJECT:
+      return {
+        ...state,
+        projects: state.projects.map(project =>
+          project.id === action.payload.id ? action.payload : project
+        )
+      };
     case DELETE_PROJECT:
       return {
         ...state,
@@ -22,5 +29,18 @@ export default (state, action) => {
           project => project.id !== action.payload
         )
       };
+    case SET_CURRENT:
+      return {
+        ...state,
+        current: action.payload
+      };
+    case CLEAR_CURRENT:
+      return {
+        ...state,
+        current: null
+      };
+
+    default:
+      return state;
   }
 };

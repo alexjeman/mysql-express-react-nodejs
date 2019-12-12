@@ -4,7 +4,7 @@ import ProjectContext from '../../context/project/projectContext'
 
 const ProjectItemEdit = ({ project }) => {
   const projectContext = useContext(ProjectContext)
-  const { deleteProject } = projectContext;
+  const { deleteProject, setCurrent, clearCurrent } = projectContext;
 
   const {
     id,
@@ -14,7 +14,8 @@ const ProjectItemEdit = ({ project }) => {
   } = project;
 
   const onDelete = () => {
-    deleteProject(id)
+    deleteProject(id);
+    clearCurrent()
   }
 
   return (
@@ -25,7 +26,7 @@ const ProjectItemEdit = ({ project }) => {
         <li>{project_sample}</li>
       </ul>
       <p>
-        <button className='btn'>Edit</button>
+        <button className='btn' onClick={() => setCurrent(project)}>Edit</button>
         <button className='btn' onClick={onDelete}>Delete</button>
       </p>
     </div>
