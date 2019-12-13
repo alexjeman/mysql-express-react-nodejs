@@ -59,10 +59,6 @@ body {
   font-size: 2rem;
 }
 
-/* .navbar nav .material-icons-outlined + b {
-  padding-top: 5px;
-} */
-
 .navbar .social .fa-info-circle {
   font-size: 1.5rem;
 }
@@ -93,6 +89,7 @@ body {
 }
 
 /* Absolute icon and text position */
+
 .navbar nav i {
   padding-top: 20%;
 }
@@ -177,6 +174,13 @@ body {
 
 /***** Project Page
 **************************/
+
+.project-container .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 .project-container {
   width: 90%;

@@ -1,25 +1,37 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
+import Loader from "../layout/Loader";
 import ProjectItemEdit from "../admin/ProjectItemEdit";
 import ProjectContext from "../../context/project/projectContext";
 
 const ProjectsEdit = () => {
   const projectContext = useContext(ProjectContext);
 
-  const { projects, filtered } = projectContext;
+  const { projects, filtered, getProjects, loading } = projectContext;
 
-  if (projects.length === 0) {
+  useEffect(() => {
+    getProjects();
+    // eslint-disable-next-line
+  }, []);
+
+  if (projects !== null && projects.length === 0 && !loading) {
     return <h4>No projects</h4>;
   }
 
   return (
     <Fragment>
-      {filtered !== null
-        ? filtered.map(project => (
+      {projects !== null && !loading ? (
+        filtered !== null ? (
+          filtered.map(project => (
             <ProjectItemEdit key={project.id} project={project} />
           ))
-        : projects.map(project => (
+        ) : (
+          projects.map(project => (
             <ProjectItemEdit key={project.id} project={project} />
-          ))}
+          ))
+        )
+      ) : (
+        <Loader />
+      )}
     </Fragment>
   );
 };

@@ -48,6 +48,7 @@ router.post(
     // Build project object
     const project = {
       user: req.user.email,
+      id: 99,
       project_name,
       project_description,
       project_sample,

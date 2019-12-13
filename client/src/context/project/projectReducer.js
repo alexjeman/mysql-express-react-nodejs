@@ -1,33 +1,44 @@
 import {
+  GET_PROJECTS,
   ADD_PROJECT,
   DELETE_PROJECT,
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_PROJECT,
   FILTER_PROJECTS,
-  CLEAR_FILTER
+  CLEAR_FILTER,
+  PROJECT_ERROR
 } from "../types";
 
 export default (state, action) => {
   switch (action.type) {
+    case GET_PROJECTS:
+      return {
+        ...state,
+        projects: action.payload,
+        loading: false
+      };
     case ADD_PROJECT:
       return {
         ...state,
-        projects: [...state.projects, action.payload]
+        projects: [...state.projects, action.payload],
+        loading: false
       };
     case UPDATE_PROJECT:
       return {
         ...state,
         projects: state.projects.map(project =>
           project.id === action.payload.id ? action.payload : project
-        )
+        ),
+        loading: false
       };
     case DELETE_PROJECT:
       return {
         ...state,
         projects: state.projects.filter(
           project => project.id !== action.payload
-        )
+        ),
+        loading: false
       };
     case SET_CURRENT:
       return {
@@ -54,6 +65,11 @@ export default (state, action) => {
       return {
         ...state,
         filtered: null
+      };
+    case PROJECT_ERROR:
+      return {
+        ...state,
+        error: action.payload
       };
     default:
       return state;
