@@ -7,12 +7,15 @@ import Work from "./components/pages/Work";
 import Admin from "./components/pages/Admin";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import Notifications from './components/layout/Notifications'
+import Notifications from "./components/layout/Notifications";
 
 import ProjectState from "./context/project/ProjectState";
 import AuthState from "./context/auth/AuthState";
 import NotificationState from "./context/notification/NotificationState";
+import setAuthToken from "./util/setAuthToken";
 import "./App.css";
+
+setAuthToken(localStorage.token);
 
 const App = () => {
   return (

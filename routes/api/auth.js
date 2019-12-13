@@ -15,7 +15,7 @@ router.get("/", auth, async (req, res) => {
     let sql = `SELECT id, name, email, date  FROM users WHERE email = "${req.user.email}"`;
     connection.query(sql, async (err, user) => {
       if (err) throw err;
-      res.json(user);
+      res.json(user[0]);
     });
   } catch (error) {
     console.error(error.message);

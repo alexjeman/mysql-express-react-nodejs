@@ -1,21 +1,26 @@
 import React, { useState, useContext, useEffect } from "react";
 import NotificationContext from "../../context/notification/notificationContext";
-import AuthContext from '../../context/auth/authContext'
+import AuthContext from "../../context/auth/authContext";
 
-const Register = () => {
+const Register = props => {
   const notificationContext = useContext(NotificationContext);
   const authContext = useContext(AuthContext);
 
   const { setNotification } = notificationContext;
 
-  const { register, error, clearErrors } = authContext;
+  const { register, error, clearErrors, isAuthenticated } = authContext;
 
   useEffect(() => {
-    if(error === 'User already exists' ) {
-      setNotification(error, 'danger');
-      clearErrors()
+    if (isAuthenticated) {
+      props.history.push("/admin");
     }
-  }, [error])
+
+    if (error === "User already exists") {
+      setNotification(error, "danger");
+      clearErrors();
+    }
+    // eslint-disable-next-line
+  }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
     name: "",
@@ -42,7 +47,7 @@ const Register = () => {
         name,
         email,
         password
-      })
+      });
     }
   };
 
