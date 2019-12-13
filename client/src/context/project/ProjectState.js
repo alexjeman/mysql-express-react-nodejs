@@ -52,8 +52,13 @@ const ProjectState = props => {
   };
 
   // Delete project
-  const deleteProject = id => {
-    dispatch({ type: DELETE_PROJECT, payload: id });
+  const deleteProject = async id => {
+    try {
+      await axios.delete(`/api/projects/${id}`);
+      dispatch({ type: DELETE_PROJECT, payload: id });
+    } catch (error) {
+      dispatch({ type: PROJECT_ERROR, payload: error.response.msg });
+    }
   };
 
   // Clear projects
@@ -72,8 +77,23 @@ const ProjectState = props => {
   };
 
   // Update project
-  const updateProject = project => {
-    dispatch({ type: UPDATE_PROJECT, payload: project });
+  const updateProject = async project => {
+    const config = {
+      headers: {
+        "Contents-Type": "application/json"
+      }
+    };
+
+    try {
+      const res = await axios.put(
+        `/api/projects/${project.id}`,
+        project,
+        config
+      );
+      dispatch({ type: UPDATE_PROJECT, payload: res.data });
+    } catch (error) {
+      dispatch({ type: PROJECT_ERROR, payload: error.response.msg });
+    }
   };
 
   // Filter projects
