@@ -8,6 +8,7 @@ import Admin from "./components/pages/Admin";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Notifications from "./components/layout/Notifications";
+import PrivateRoute from "./components/routing/PrivateRoute"
 
 import ProjectState from "./context/project/ProjectState";
 import AuthState from "./context/auth/AuthState";
@@ -31,8 +32,8 @@ const App = () => {
                   <Route exact path='/' component={Home} />
                   <Route exact path='/about' component={About} />
                   <Route exact path='/work' component={Work} />
-                  <Route exact path='/admin' component={Admin} />
-                  <Route exact path='/admin/register' component={Register} />
+                  <PrivateRoute exact path='/admin' component={Admin} />
+                  <PrivateRoute exact path='/admin/register' component={Register} />
                   <Route exact path='/admin/login' component={Login} />
                 </Switch>
               </div>
