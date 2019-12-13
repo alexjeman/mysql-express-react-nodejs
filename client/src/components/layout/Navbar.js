@@ -3,6 +3,7 @@ import logo from "../../cute-skull.png";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
+import ProjectContext from "../../context/project/projectContext";
 
 const Navbar = ({
   title,
@@ -16,10 +17,14 @@ const Navbar = ({
   iconLogout
 }) => {
   const authContext = useContext(AuthContext);
+  const projectContext = useContext(ProjectContext);
+
   const { isAuthenticated, logout } = authContext;
+  const { clearProjects } = projectContext;
 
   const onLogout = () => {
     logout();
+    clearProjects();
   };
 
   const authLinks = (

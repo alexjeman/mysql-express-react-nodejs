@@ -7,7 +7,8 @@ import {
   UPDATE_PROJECT,
   FILTER_PROJECTS,
   CLEAR_FILTER,
-  PROJECT_ERROR
+  PROJECT_ERROR,
+  CLEAR_PROJECTS
 } from "../types";
 
 export default (state, action) => {
@@ -65,6 +66,14 @@ export default (state, action) => {
       return {
         ...state,
         filtered: null
+      };
+    case CLEAR_PROJECTS:
+      return {
+        ...state,
+        projects: null,
+        filtered: null,
+        error: null,
+        current: null
       };
     case PROJECT_ERROR:
       return {

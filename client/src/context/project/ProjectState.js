@@ -56,6 +56,11 @@ const ProjectState = props => {
     dispatch({ type: DELETE_PROJECT, payload: id });
   };
 
+  // Clear projects
+  const clearProjects = () => {
+    dispatch({ type: CLEAR_PROJECTS });
+  };
+
   // Set current project
   const setCurrent = project => {
     dispatch({ type: SET_CURRENT, payload: project });
@@ -95,7 +100,8 @@ const ProjectState = props => {
         setCurrent,
         clearCurrent,
         filterProjects,
-        clearFilter
+        clearFilter,
+        clearProjects
       }}
     >
       {props.children}
