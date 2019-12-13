@@ -30,7 +30,7 @@ const ProjectItem = ({ project }) => {
           </div>
           <div className='popup-right'>
             <a href='#project-page' className='popup-close'>
-              <i class='fas fa-times'></i>
+              <i className='fas fa-times'></i>
             </a>
             <h2 className='project-name'>{project_name}</h2>
             <p className='popup-text'>{project_description}</p>

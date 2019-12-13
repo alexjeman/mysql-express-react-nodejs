@@ -1,38 +1,78 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../cute-skull.png";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import AuthContext from "../../context/auth/authContext";
+import ProjectContext from "../../context/project/projectContext";
 
-const Navbar = ({ title, iconHome, iconSkills, iconProjects, iconAbout, iconContact, iconGithub, iconInfo }) => {
+const Navbar = ({
+  title,
+  iconHome,
+  iconSkills,
+  iconProjects,
+  iconAbout,
+  iconContact,
+  iconGithub,
+  iconInfo,
+  iconLogout
+}) => {
+  const authContext = useContext(AuthContext);
+  const projectContext = useContext(ProjectContext);
+
+  const { isAuthenticated, logout } = authContext;
+  const { clearProjects } = projectContext;
+
+  const onLogout = () => {
+    logout();
+    clearProjects();
+  };
+
+  const authLinks = (
+    <a onClick={onLogout} href='#!'>
+      <i className='material-icons-outlined'>{iconLogout}</i>
+      <b>Logout</b>
+    </a>
+  );
+
   return (
     <div className='navbar'>
-      <Link to='/' alt="logo">
+      <Link to='/' alt='logo'>
         <img src={logo} className='app-logo' alt='AJ' />
         <div className='text-logo'>{title}</div>
       </Link>
       <nav>
-        <Link to="/">
-        <i className="material-icons-outlined">{iconHome}</i><b>Home</b>
+        <Link to='/'>
+          <i className='material-icons-outlined'>{iconHome}</i>
+          <b>Home</b>
         </Link>
-        <Link to="/work">
-          <i className={iconProjects}></i><b>Work</b>
+        <Link to='/work'>
+          <i className={iconProjects}></i>
+          <b>Work</b>
         </Link>
-        <Link to="/skills">
-          <i className={iconSkills}></i><b>Skills</b>
+        <Link to='/skills'>
+          <i className={iconSkills}></i>
+          <b>Skills</b>
         </Link>
-        <Link to="/contact">
-        <i className={iconContact}></i><b>Contact</b>
+        <Link to='/contact'>
+          <i className={iconContact}></i>
+          <b>Contact</b>
         </Link>
-        <Link to="/about">
-        <i className={iconAbout}></i><b>About</b>
+        <Link to='/about'>
+          <i className={iconAbout}></i>
+          <b>About</b>
         </Link>
+        {isAuthenticated ? authLinks : ""}
       </nav>
-      <div className="social" >
-        <a href='https://github.com/alexandrujeman' target="_blank" rel="noopener noreferrer">
+      <div className='social'>
+        <a
+          href='https://github.com/alexandrujeman'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
           <i className={iconGithub}></i>
         </a>
-        <Link to='/info' alt="logo">
-          <i className="material-icons-outlined">{iconInfo}</i>
+        <Link to='/info' alt='logo'>
+          <i className='material-icons-outlined'>{iconInfo}</i>
         </Link>
       </div>
     </div>
@@ -52,7 +92,8 @@ Navbar.defaultProps = {
   iconProjects: "fas fa-flask",
   iconContact: "fas fa-satellite",
   iconSkills: "fas fa-dna",
-  iconInfo: "info"
+  iconInfo: "info",
+  iconLogout: "lock"
 };
 
 export default Navbar;

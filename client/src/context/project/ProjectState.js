@@ -1,82 +1,132 @@
 import React, { useReducer } from "react";
-import uuid from "uuid";
+import axios from "axios";
 import ProjectContext from "./projectContext";
 import projectReducer from "./projectReducer";
 import {
+  GET_PROJECTS,
   ADD_PROJECT,
   DELETE_PROJECT,
+  PROJECT_ERROR,
   SET_CURRENT,
   CLEAR_CURRENT,
+  CLEAR_PROJECTS,
   UPDATE_PROJECT,
   FILTER_PROJECTS,
   CLEAR_FILTER
-} from '../types'
+} from "../types";
 
 const ProjectState = props => {
   const initialState = {
-    projects: [
-      {
-        "id": "1",
-        "user": "alexandrujeman.ja@gmail.com",
-        "project_name": "Appraisal System 1",
-        "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, ",
-        "project_sample": "https://github.com/alexandrujeman/appraisal-system",
-        "project_link": "http://alexjeman.com",
-        "project_img": "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
-      },
-      {
-        "id": "2",
-        "user": "alexandrujeman.ja@gmail.com",
-        "project_name": "Tribute Page 2",
-        "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia",
-        "project_sample": "https://github.com/alexandrujeman/appraisal-system",
-        "project_link": "http://alexjeman.com",
-        "project_img": "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
-      },
-      {
-        "id": "3",
-        "user": "alexandrujeman.ja@gmail.com",
-        "project_name": "Tribute Page 3",
-        "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",
-        "project_sample": "https://github.com/alexandrujeman/appraisal-system",
-        "project_link": "http://alexjeman.com",
-        "project_img": "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
-      },
-      {
-        "id": "4",
-        "user": "alexandrujeman.ja@gmail.com",
-        "project_name": "Tribute Page 4",
-        "project_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora delectus vero nisi natus iste quia, consectetur a nostrum. Architecto inventore porro consequatur illum sit ex cumque perspiciatis iste blanditiis quaerat doloremque vero consectetur accusamus sed aperiam, nesciunt delectus magnam ab?",
-        "project_sample": "https://github.com/alexandrujeman/appraisal-system",
-        "project_link": "http://alexjeman.com",
-        "project_img": "https://github.com/alexandrujeman/free-code-camp-projects/raw/master/FrontEnd/Build-a-Personal-Portfolio-Webpage/img/tribute_gallery.png"
-      }
-    ]
-  }
+    projects: null,
+    current: null,
+    filtered: null,
+    error: null
+  };
 
   const [state, dispatch] = useReducer(projectReducer, initialState);
 
+  // Get projects
+  const getProjects = async () => {
+    try {
+      const res = await axios.get("/api/projects");
+      dispatch({ type: GET_PROJECTS, payload: res.data });
+    } catch (error) {
+      dispatch({ type: PROJECT_ERROR, payload: error.response.msg });
+    }
+  };
+
   // Add project
+  const addProject = async project => {
+    const config = {
+      headers: {
+        "Contents-Type": "application/json"
+      }
+    };
+
+    try {
+      const res = await axios.post("/api/projects", project, config);
+      dispatch({ type: ADD_PROJECT, payload: res.data });
+    } catch (error) {
+      dispatch({ type: PROJECT_ERROR, payload: error.response.msg });
+    }
+  };
 
   // Delete project
+  const deleteProject = async id => {
+    try {
+      await axios.delete(`/api/projects/${id}`);
+      dispatch({ type: DELETE_PROJECT, payload: id });
+    } catch (error) {
+      dispatch({ type: PROJECT_ERROR, payload: error.response.msg });
+    }
+  };
+
+  // Clear projects
+  const clearProjects = () => {
+    dispatch({ type: CLEAR_PROJECTS });
+  };
 
   // Set current project
+  const setCurrent = project => {
+    dispatch({ type: SET_CURRENT, payload: project });
+  };
 
   // Clear current project
+  const clearCurrent = () => {
+    dispatch({ type: CLEAR_CURRENT });
+  };
 
   // Update project
+  const updateProject = async project => {
+    const config = {
+      headers: {
+        "Contents-Type": "application/json"
+      }
+    };
 
-  // Filter project
+    try {
+      const res = await axios.put(
+        `/api/projects/${project.id}`,
+        project,
+        config
+      );
+      dispatch({ type: UPDATE_PROJECT, payload: res.data });
+    } catch (error) {
+      dispatch({ type: PROJECT_ERROR, payload: error.response.msg });
+    }
+  };
+
+  // Filter projects
+  const filterProjects = text => {
+    dispatch({ type: FILTER_PROJECTS, payload: text });
+  };
 
   // Clear filter
+  const clearFilter = () => {
+    dispatch({ type: CLEAR_FILTER });
+  };
+
   return (
     <ProjectContext.Provider
-    value={{
-      projects: state.projects
-    }}>
-    { props.children }
+      value={{
+        projects: state.projects,
+        current: state.current,
+        filtered: state.filtered,
+        error: state.error,
+        getProjects,
+        addProject,
+        updateProject,
+        deleteProject,
+        setCurrent,
+        clearCurrent,
+        filterProjects,
+        clearFilter,
+        clearProjects
+      }}
+    >
+      {props.children}
     </ProjectContext.Provider>
-    )
-}
+  );
+};
 
 export default ProjectState;
