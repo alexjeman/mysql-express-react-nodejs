@@ -160,8 +160,8 @@ body {
   opacity: 1;
   color: var(--neon-secondary);
   text-shadow: 0 0 3px var(--neon-primary), 0px 0px 7px var(--neon-primary),
-  0 0 10px var(--neon-primary), 0 0 15px var(--neon-primary),
-  2px 2px 5px var(--neon-primary);
+    0 0 10px var(--neon-primary), 0 0 15px var(--neon-primary),
+    2px 2px 5px var(--neon-primary);
 }
 
 .navbar nav b.active i {
@@ -460,11 +460,15 @@ body {
 
   .navbar {
     transform: translateX(-8rem);
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .navbar i {
-    font-size: 3rem;
+    font-size: 2.9rem;
+  }
+
+  .navbar nav .material-icons-outlined {
+    font-size: 3.7rem;
   }
 
   .navbar nav a {
@@ -475,15 +479,15 @@ body {
     padding-bottom: 1.5rem;
   }
 
-  .navbar nav .material-icons-outlined {
-    font-size: 4rem;
+  .app-logo {
+    height: 7rem;
+    width: auto;
+    margin-top: 1.2vh;
+    padding-bottom: 0.6rem;
   }
 
-  .app-logo {
-    height: 70px;
-    width: auto;
-    margin-top: 1.5vh;
-    padding-bottom: 0.5rem;
+  .text-logo {
+    font-size: 1.8rem;
   }
 
   .project-container {
