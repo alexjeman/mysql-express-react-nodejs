@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import logo from "../../cute-skull.png";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 import ProjectContext from "../../context/project/projectContext";
 
@@ -36,31 +36,31 @@ const Navbar = ({
 
   return (
     <div className='navbar'>
-      <Link to='/' alt='logo'>
+      <NavLink to='/' alt='logo'>
         <img src={logo} className='app-logo' alt='AJ' />
         <div className='text-logo'>{title}</div>
-      </Link>
+      </NavLink>
       <nav>
-        <Link to='/'>
+        <NavLink exact to='/' activeClassName='active'>
           <i className='material-icons-outlined'>{iconHome}</i>
           <b>Home</b>
-        </Link>
-        <Link to='/work'>
+        </NavLink>
+        <NavLink to='/work' activeClassName='active'>
           <i className={iconProjects}></i>
           <b>Work</b>
-        </Link>
-        <Link to='/skills'>
+        </NavLink>
+        <NavLink to='/skills' activeClassName='active'>
           <i className={iconSkills}></i>
           <b>Skills</b>
-        </Link>
-        <Link to='/contact'>
+        </NavLink>
+        <NavLink to='/contact' activeClassName='active'>
           <i className={iconContact}></i>
           <b>Contact</b>
-        </Link>
-        <Link to='/about'>
+        </NavLink>
+        <NavLink to='/about' activeClassName='active'>
           <i className={iconAbout}></i>
           <b>About</b>
-        </Link>
+        </NavLink>
         {isAuthenticated ? authLinks : ""}
       </nav>
       <div className='social'>
@@ -71,9 +71,9 @@ const Navbar = ({
         >
           <i className={iconGithub}></i>
         </a>
-        <Link to='/info' alt='logo'>
+        <NavLink to='/info' alt='logo'>
           <i className='material-icons-outlined'>{iconInfo}</i>
-        </Link>
+        </NavLink>
       </div>
     </div>
   );
