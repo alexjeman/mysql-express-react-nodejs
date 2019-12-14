@@ -24,12 +24,34 @@ body {
   --bg-dark-three: #1d1d1d;
   --bg-dark-four: #00000033;
   --bg-dark-transparent: #2d303a4d;
-  --color-white: #ffffff;
-  --color-darken: #888888;
+  --bg-dark-transparent2: #10101179;
+  --color-white: #f4f4f4;
+  --color-darken: #969696;
   --color-red: #e32d0d;
   --neon-primary: #e42427;
-  --neon-secondary: #ffbebe;
+  --neon-secondary: #ffd8d8;
   --linear-gradient-one: linear-gradient(to right, #ff29ff57, #4fff6c7e);
+}
+
+.app-logo {
+  height: 50px;
+  width: auto;
+  margin-top: 1.5vh;
+}
+
+body {
+  background: var(--bg-dark-one);
+  color: var(--color-white);
+}
+
+.container {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  margin-left: 60px;
+  overflow: hidden;
+  position: relative;
 }
 
 /***** Nav
@@ -68,6 +90,10 @@ body {
   font-size: 1.6rem;
 }
 
+.navbar nav {
+  transform: translateY(90%);
+}
+
 .navbar nav a {
   max-height: 3.5rem;
   height: 3rem;
@@ -76,19 +102,6 @@ body {
   width: 100%;
   position: relative;
 }
-
-.navbar nav i,
-.navbar nav b {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 92%;
-  transition: all 0.3s ease-out;
-}
-
-/* Absolute icon and text position */
 
 .navbar nav i {
   padding-top: 20%;
@@ -100,6 +113,21 @@ body {
 
 .navbar nav .material-icons-outlined {
   padding-top: 15%;
+}
+
+.navbar nav i,
+.navbar nav b {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 92%;
+  transition: all 0.4s ease-out;
+}
+
+.navbar .social a {
+  display: block;
 }
 
 .navbar .social i {
@@ -115,10 +143,6 @@ body {
   bottom: 2.7vh;
 }
 
-.navbar .social a {
-  display: block;
-}
-
 .navbar nav b {
   opacity: 0;
 }
@@ -127,49 +151,29 @@ body {
 .navbar nav i:hover,
 .navbar .social i:hover {
   color: var(--neon-secondary);
-  text-shadow: 0 0 3px var(--neon-primary), 0 0 10px var(--neon-primary),
-    0 0 30px var(--neon-primary), 0 0 20px var(--neon-primary),
+  text-shadow: 0 0 3px var(--neon-primary), 0px 0px 7px var(--neon-primary),
+    0 0 10px var(--neon-primary), 0 0 15px var(--neon-primary),
     2px 2px 5px var(--neon-primary);
+}
+
+.navbar nav a.active i {
+  opacity: 1;
+  color: var(--neon-secondary);
+  text-shadow: 0 0 3px var(--neon-primary), 0px 0px 7px var(--neon-primary),
+    0 0 10px var(--neon-primary), 0 0 15px var(--neon-primary),
+    2px 2px 5px var(--neon-primary);
+}
+
+.navbar nav b.active i {
+  opacity: 0;
 }
 
 .navbar nav a:hover b {
   opacity: 1;
-  color: var(--neon-secondary);
 }
 
 .navbar nav a:hover i {
   opacity: 0;
-  color: var(--neon-secondary);
-  text-shadow: 0 0 3px var(--neon-primary), 0 0 10px var(--neon-primary),
-    0 0 30px var(--neon-primary), 0 0 20px var(--neon-primary),
-    2px 2px 5px var(--neon-primary);
-}
-
-.navbar nav {
-  opacity: 1;
-  text-align: center;
-  transform: translateY(90%);
-}
-
-.app-logo {
-  height: 50px;
-  width: auto;
-  margin-top: 1.5vh;
-}
-
-body {
-  background: var(--bg-dark-one);
-  color: var(--color-white);
-}
-
-.container {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  margin-left: 60px;
-  overflow: hidden;
-  position: relative;
 }
 
 /***** Project Page
@@ -256,7 +260,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--bg-dark-transparent2);
   z-index: 9997;
   opacity: 0;
   visibility: hidden;
@@ -456,11 +460,15 @@ body {
 
   .navbar {
     transform: translateX(-8rem);
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .navbar i {
-    font-size: 3rem;
+    font-size: 2.9rem;
+  }
+
+  .navbar nav .material-icons-outlined {
+    font-size: 3.7rem;
   }
 
   .navbar nav a {
@@ -471,15 +479,15 @@ body {
     padding-bottom: 1.5rem;
   }
 
-  .navbar nav .material-icons-outlined {
-    font-size: 4rem;
+  .app-logo {
+    height: 7rem;
+    width: auto;
+    margin-top: 1.2vh;
+    padding-bottom: 0.6rem;
   }
 
-  .app-logo {
-    height: 70px;
-    width: auto;
-    margin-top: 1.5vh;
-    padding-bottom: 0.5rem;
+  .text-logo {
+    font-size: 1.8rem;
   }
 
   .project-container {
