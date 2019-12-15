@@ -14,7 +14,7 @@ import ProjectState from "./context/project/ProjectState";
 import AuthState from "./context/auth/AuthState";
 import NotificationState from "./context/notification/NotificationState";
 import setAuthToken from "./util/setAuthToken";
-import "./App.css";
+import "./App.scss";
 
 setAuthToken(localStorage.token);
 
