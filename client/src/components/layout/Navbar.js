@@ -65,10 +65,10 @@ const Navbar = ({
       </nav>
       <div className='social'>
         <a href='https://github.com/alexandrujeman' target='_blank' rel='noopener noreferrer'>
-          <span className="iconify" data-icon={iconGithub} data-inline="false"></span>
+          <span className="iconify github" data-icon={iconGithub} data-inline="false"></span>
         </a>
         <NavLink to='/info' alt='logo'>
-        <span className="iconify" data-icon={iconInfo} data-inline="false"></span>
+        <span className="iconify siteinfo" data-icon={iconInfo} data-inline="false"></span>
         </NavLink>
       </div>
     </div>

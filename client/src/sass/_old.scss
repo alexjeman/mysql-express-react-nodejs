@@ -1,4 +1,4 @@
-// OLD FILES - TO CONVERT TO SCSS
+// OLD CSS FILE - TO CONVERT TO SASS
 
 /***** Variables
 **************************/
@@ -316,11 +316,15 @@ body {
     padding-top: 2.5rem;
   }
 
-  .navbar .social .iconify {
-    padding-bottom: 2%;
-    padding-top: 2%;
+  .navbar .social {
+    .iconify {
+      padding-bottom: 2%;
+      padding-top: 2%;
+    }
+    .github {
+      margin-top: 0;
+    }
   }
-
   .app-logo {
     height: 7rem;
     width: auto;
