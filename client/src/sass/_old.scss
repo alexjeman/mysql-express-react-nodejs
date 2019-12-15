@@ -1,39 +1,7 @@
 // OLD FILES - TO CONVERT TO SCSS
 
-/***** Reset
-**************************/
-
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  font-family: "Roboto", Arial, sans-serif;
-  line-height: 1.4rem;
-}
-
 /***** Variables
 **************************/
-
-:root {
-  --bg-dark-one: #1f242d;
-  --bg-dark-two: #262d38;
-  --bg-dark-three: #1d1d1d;
-  --bg-dark-four: #00000033;
-  --bg-dark-transparent: #2d303a4d;
-  --bg-dark-transparent2: #10101179;
-  --color-white: #f4f4f4;
-  --color-darken: #969696;
-  --color-red: #e32d0d;
-  --neon-primary: #C8D2DA;
-  --neon-secondary: #fcfcfc;
-  --linear-gradient-one: linear-gradient(to right, #ff29ff57, #4fff6c7e);
-}
 
 .app-logo {
   height: 50px;
@@ -42,8 +10,8 @@ body {
 }
 
 body {
-  background: var(--bg-dark-one);
-  color: var(--color-white);
+  background: $bg-dark-one;
+  color: $color-white;
 }
 
 .container {
@@ -54,132 +22,6 @@ body {
   margin-left: 60px;
   overflow: hidden;
   position: relative;
-}
-
-/***** Nav
-**************************/
-
-.navbar {
-  font-size: 0.9rem;
-  position: absolute;
-  position: fixed;
-  transform: translateX(-60px);
-  top: 0;
-  background: var(--bg-dark-two);
-  color: var(--color-darken);
-  text-align: center;
-  height: 100%;
-  z-index: 7;
-  width: 3.125%;
-  min-width: 60px;
-  overflow: auto;
-}
-
-.navbar .text-logo {
-  color: var(--color-white);
-}
-
-.navbar nav {
-  transform: translateY(90%);
-}
-
-.navbar nav a {
-  max-height: 3.5rem;
-  height: 3rem;
-  display: block;
-  color: var(--color-darken);
-  width: 100%;
-  position: relative;
-}
-
-.navbar nav a .iconify {
-  padding-top: 10%;
-  padding-bottom: 10%;
-}
-
-
-.navbar nav b {
-  padding-top: 19%;
-}
-
-.navbar nav .iconify,
-.navbar nav b {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: all 0.3s ease-out;
-}
-
-.navbar nav .home {
-  height: 101%;
-}
-
-.navbar nav .projects {
-  height: 98%;
-}
-
-.navbar nav .skills {
-  margin-top: 10%;
-  height: 73%;
-}
-
-.navbar nav .mail {
-  margin-top: 5%;
-  height: 86%;
-}
-
-.navbar nav .about {
-  margin-top: 5%;
-  height: 82%;
-}
-
-.navbar .social a {
-  display: block;
-}
-
-.navbar .social .iconify {
-  color: var(--color-darken);
-  font-size: 1.6rem;
-  transition: all 0.3s ease-out;
-}
-
-.navbar .social {
-  position: absolute;
-  width: 3.125%;
-  min-width: 60px;
-  text-align: center;
-  bottom: 2.7vh;
-}
-
-.navbar nav b {
-  opacity: 0;
-}
-
-.navbar nav a:hover b,
-.navbar a:hover .iconify {
-  color: var(--color-white);
-  filter: drop-shadow(0px 0px 0.5px var(--neon-primary))
-    drop-shadow(0px 0px 1px var(--neon-primary))
-}
-
-.navbar nav a.active .iconify {
-  opacity: 1;
-  color: var(--color-white);
-  filter: drop-shadow(0px 0px 0.5px var(--neon-primary))
-    drop-shadow(0px 0px 1.5px var(--neon-primary))
-}
-
-.navbar nav b.active .iconify {
-  opacity: 0;
-}
-
-.navbar nav a:hover b {
-  opacity: 1;
-}
-
-.navbar nav a:hover .iconify {
-  opacity: 0;
 }
 
 /***** Project Page
@@ -231,21 +73,21 @@ body {
 .card-side-front {
   width: 100%;
   height: 100%;
-  background: var(--bg-dark-two);
+  background: $bg-dark-two;
   text-align: center;
 }
 
 .card-side-back {
   width: 100%;
   height: 100%;
-  background: var(--bg-dark-two);
+  background: $bg-dark-two;
   transform: rotateY(180deg);
 }
 
 .card-side-front .project-name {
   width: 100%;
   position: absolute;
-  background: var(--bg-dark-transparent);
+  background: $bg-dark-transparent;
   bottom: 0;
 }
 
@@ -266,7 +108,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--bg-dark-transparent2);
+  background-color: $bg-dark-transparent2;
   z-index: 9997;
   opacity: 0;
   visibility: hidden;
@@ -287,7 +129,7 @@ body {
 
 .popup-content {
   z-index: 9999;
-  background: var(--bg-dark-two);
+  background: $bg-dark-two;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -296,7 +138,7 @@ body {
   max-height: 90vh;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
   border-radius: 3px;
-  color: var(--color-white);
+  color: $color-white;
   display: flex;
   overflow: hidden;
   transition: all 0.4s 0.2s;
@@ -469,20 +311,14 @@ body {
     font-size: 1.8rem;
   }
 
-  .navbar i {
-    font-size: 2.9rem;
-  }
-
-  .navbar nav .material-icons-outlined {
-    font-size: 3.7rem;
-  }
-
   .navbar nav a {
-    padding-bottom: 5rem;
+    padding-bottom: 2.5rem;
+    padding-top: 2.5rem;
   }
 
-  .navbar .social a {
-    padding-bottom: 1.5rem;
+  .navbar .social .iconify {
+    padding-bottom: 2%;
+    padding-top: 2%;
   }
 
   .app-logo {

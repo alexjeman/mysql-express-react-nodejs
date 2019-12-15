@@ -1,0 +1,29 @@
+// Basic reset
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  line-height: 1.4rem;
+}
+
+// Colors
+
+$bg-dark-one: #1f242d;
+$bg-dark-two: #262d38;
+$bg-dark-three: #1d1d1d;
+$bg-dark-four: #00000033;
+$bg-dark-transparent: #2d303a4d;
+$bg-dark-transparent2: #10101179;
+$color-white: #f4f4f4;
+$color-darken: #969696;
+$color-red: #e32d0d;
+$neon-primary: #c8d2da;
+$neon-secondary: #fcfcfc;
+$linear-gradient-one: linear-gradient(to right, #ff29ff57, #4fff6c7e);
