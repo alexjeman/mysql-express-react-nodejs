@@ -19,8 +19,8 @@ body {
 **************************/
 
 :root {
-  --bg-dark-one: #1f1f1f;
-  --bg-dark-two: #282828;
+  --bg-dark-one: #1f242d;
+  --bg-dark-two: #262d38;
   --bg-dark-three: #1d1d1d;
   --bg-dark-four: #00000033;
   --bg-dark-transparent: #2d303a4d;
@@ -77,19 +77,6 @@ body {
   color: var(--color-white);
 }
 
-.navbar nav .material-icons-outlined {
-  font-size: 2rem;
-}
-
-.navbar .social .fa-info-circle {
-  font-size: 1.5rem;
-}
-
-.navbar i {
-  color: var(--color-darken);
-  font-size: 1.6rem;
-}
-
 .navbar nav {
   transform: translateY(90%);
 }
@@ -103,19 +90,16 @@ body {
   position: relative;
 }
 
-.navbar nav i {
-  padding-top: 20%;
+.navbar nav .iconify {
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
 .navbar nav b {
   padding-top: 22%;
 }
 
-.navbar nav .material-icons-outlined {
-  padding-top: 15%;
-}
-
-.navbar nav i,
+.navbar nav .iconify,
 .navbar nav b {
   position: absolute;
   display: block;
@@ -123,14 +107,16 @@ body {
   left: 0;
   width: 100%;
   height: 92%;
-  transition: all 0.4s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .navbar .social a {
   display: block;
 }
 
-.navbar .social i {
+.navbar .social .iconify {
+  color: var(--color-darken);
+  font-size: 1.6rem;
   transition: all 0.3s ease-out;
 }
 
@@ -148,23 +134,23 @@ body {
 }
 
 .navbar nav b:hover,
-.navbar nav i:hover,
-.navbar .social i:hover {
+.navbar .iconify:hover {
   color: var(--neon-secondary);
-  text-shadow: 0 0 3px var(--neon-primary), 0px 0px 7px var(--neon-primary),
-    0 0 10px var(--neon-primary), 0 0 15px var(--neon-primary),
-    2px 2px 5px var(--neon-primary);
+  filter: drop-shadow(0px 0px 1px var(--neon-primary))
+    drop-shadow(0px 0px 2px var(--neon-primary))
+   ;
 }
 
-.navbar nav a.active i {
+.navbar nav a.active i,
+.navbar nav a.active .iconify {
   opacity: 1;
   color: var(--neon-secondary);
-  text-shadow: 0 0 3px var(--neon-primary), 0px 0px 7px var(--neon-primary),
-    0 0 10px var(--neon-primary), 0 0 15px var(--neon-primary),
-    2px 2px 5px var(--neon-primary);
+  filter: drop-shadow(0px 0px 1px var(--neon-primary))
+    drop-shadow(0px 0px 2px var(--neon-primary))
+    ;
 }
 
-.navbar nav b.active i {
+.navbar nav b.active .iconify {
   opacity: 0;
 }
 
@@ -172,7 +158,7 @@ body {
   opacity: 1;
 }
 
-.navbar nav a:hover i {
+.navbar nav a:hover .iconify {
   opacity: 0;
 }
 

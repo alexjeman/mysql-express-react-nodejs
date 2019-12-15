@@ -29,7 +29,7 @@ const Navbar = ({
 
   const authLinks = (
     <a onClick={onLogout} href='#!'>
-      <i className='material-icons-outlined'>{iconLogout}</i>
+      <span className="iconify" data-icon={iconLogout} data-inline="false"></span>
       <b>Logout</b>
     </a>
   );
@@ -42,37 +42,33 @@ const Navbar = ({
       </NavLink>
       <nav>
         <NavLink exact to='/' activeClassName='active'>
-          <i className='material-icons-outlined'>{iconHome}</i>
+        <span className="iconify" data-icon={iconHome} data-inline="false"></span>
           <b>Home</b>
         </NavLink>
         <NavLink to='/work' activeClassName='active'>
-          <i className={iconProjects}></i>
+        <span className="iconify" data-icon={iconProjects} data-inline="false"></span>
           <b>Work</b>
         </NavLink>
         <NavLink to='/skills' activeClassName='active'>
-          <i className={iconSkills}></i>
+        <span className="iconify" data-icon={iconSkills} data-inline="false"></span>
           <b>Skills</b>
         </NavLink>
         <NavLink to='/contact' activeClassName='active'>
-          <i className={iconContact}></i>
+        <span className="iconify" data-icon={iconContact} data-inline="false"></span>
           <b>Contact</b>
         </NavLink>
         <NavLink to='/about' activeClassName='active'>
-          <i className={iconAbout}></i>
+        <span className="iconify" data-icon={iconAbout} data-inline="false"></span>
           <b>About</b>
         </NavLink>
         {isAuthenticated ? authLinks : ""}
       </nav>
       <div className='social'>
-        <a
-          href='https://github.com/alexandrujeman'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <i className={iconGithub}></i>
+        <a href='https://github.com/alexandrujeman' target='_blank' rel='noopener noreferrer'>
+          <span className="iconify" data-icon={iconGithub} data-inline="false"></span>
         </a>
         <NavLink to='/info' alt='logo'>
-          <i className='material-icons-outlined'>{iconInfo}</i>
+        <span className="iconify" data-icon={iconInfo} data-inline="false"></span>
         </NavLink>
       </div>
     </div>
@@ -86,14 +82,14 @@ Navbar.propTypes = {
 
 Navbar.defaultProps = {
   title: "Alex",
-  iconGithub: "fab fa-github-alt",
-  iconAbout: "fas fa-heartbeat",
-  iconHome: "home",
-  iconProjects: "fas fa-flask",
-  iconContact: "fas fa-satellite",
-  iconSkills: "fas fa-dna",
-  iconInfo: "info",
-  iconLogout: "lock"
+  iconGithub: "il:github",
+  iconAbout: "mdi:heart-pulse",
+  iconHome: "typcn:globe",
+  iconProjects: "bx:bxs-flask",
+  iconContact: "mdi:satellite-variant",
+  iconSkills: "bx:bx-dna",
+  iconInfo: "uil:info-circle",
+  iconLogout: "bx:bx-lock"
 };
 
 export default Navbar;
