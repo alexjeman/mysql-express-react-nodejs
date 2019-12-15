@@ -42,23 +42,23 @@ const Navbar = ({
       </NavLink>
       <nav>
         <NavLink exact to='/' activeClassName='active'>
-        <span className="iconify" data-icon={iconHome} data-inline="false"></span>
+        <span className="iconify home" data-icon={iconHome} data-inline="false"></span>
           <b>Home</b>
         </NavLink>
         <NavLink to='/work' activeClassName='active'>
-        <span className="iconify" data-icon={iconProjects} data-inline="false"></span>
+        <span className="iconify projects" data-icon={iconProjects} data-inline="false"></span>
           <b>Work</b>
         </NavLink>
         <NavLink to='/skills' activeClassName='active'>
-        <span className="iconify" data-icon={iconSkills} data-inline="false"></span>
+        <span className="iconify skills" data-icon={iconSkills} data-inline="false"></span>
           <b>Skills</b>
         </NavLink>
         <NavLink to='/contact' activeClassName='active'>
-        <span className="iconify" data-icon={iconContact} data-inline="false"></span>
+        <span className="iconify mail" data-icon={iconContact} data-inline="false"></span>
           <b>Contact</b>
         </NavLink>
         <NavLink to='/about' activeClassName='active'>
-        <span className="iconify" data-icon={iconAbout} data-inline="false"></span>
+        <span className="iconify about" data-icon={iconAbout} data-inline="false"></span>
           <b>About</b>
         </NavLink>
         {isAuthenticated ? authLinks : ""}
@@ -83,11 +83,11 @@ Navbar.propTypes = {
 Navbar.defaultProps = {
   title: "Alex",
   iconGithub: "il:github",
-  iconAbout: "mdi:heart-pulse",
-  iconHome: "typcn:globe",
-  iconProjects: "bx:bxs-flask",
-  iconContact: "mdi:satellite-variant",
-  iconSkills: "bx:bx-dna",
+  iconAbout: "fa-solid:user-circle",
+  iconHome: "mdi:home",
+  iconProjects: "bx:bx-code-alt",
+  iconContact: "entypo:mail",
+  iconSkills: "fa-solid:cogs",
   iconInfo: "uil:info-circle",
   iconLogout: "bx:bx-lock"
 };

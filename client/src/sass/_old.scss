@@ -1,3 +1,5 @@
+// OLD FILES - TO CONVERT TO SCSS
+
 /***** Reset
 **************************/
 
@@ -28,8 +30,8 @@ body {
   --color-white: #f4f4f4;
   --color-darken: #969696;
   --color-red: #e32d0d;
-  --neon-primary: #e42427;
-  --neon-secondary: #ffd8d8;
+  --neon-primary: #C8D2DA;
+  --neon-secondary: #fcfcfc;
   --linear-gradient-one: linear-gradient(to right, #ff29ff57, #4fff6c7e);
 }
 
@@ -90,24 +92,46 @@ body {
   position: relative;
 }
 
-.navbar nav .iconify {
+.navbar nav a .iconify {
   padding-top: 10%;
   padding-bottom: 10%;
 }
 
+
 .navbar nav b {
-  padding-top: 22%;
+  padding-top: 19%;
 }
 
 .navbar nav .iconify,
 .navbar nav b {
   position: absolute;
-  display: block;
   top: 0;
   left: 0;
   width: 100%;
-  height: 92%;
   transition: all 0.3s ease-out;
+}
+
+.navbar nav .home {
+  height: 101%;
+}
+
+.navbar nav .projects {
+  height: 98%;
+}
+
+.navbar nav .skills {
+  margin-top: 10%;
+  height: 73%;
+}
+
+.navbar nav .mail {
+  margin-top: 5%;
+  height: 86%;
+}
+
+.navbar nav .about {
+  margin-top: 5%;
+  height: 82%;
 }
 
 .navbar .social a {
@@ -124,7 +148,6 @@ body {
   position: absolute;
   width: 3.125%;
   min-width: 60px;
-  width: 100%;
   text-align: center;
   bottom: 2.7vh;
 }
@@ -133,21 +156,18 @@ body {
   opacity: 0;
 }
 
-.navbar nav b:hover,
-.navbar .iconify:hover {
-  color: var(--neon-secondary);
-  filter: drop-shadow(0px 0px 1px var(--neon-primary))
-    drop-shadow(0px 0px 2px var(--neon-primary))
-   ;
+.navbar nav a:hover b,
+.navbar a:hover .iconify {
+  color: var(--color-white);
+  filter: drop-shadow(0px 0px 0.5px var(--neon-primary))
+    drop-shadow(0px 0px 1px var(--neon-primary))
 }
 
-.navbar nav a.active i,
 .navbar nav a.active .iconify {
   opacity: 1;
-  color: var(--neon-secondary);
-  filter: drop-shadow(0px 0px 1px var(--neon-primary))
-    drop-shadow(0px 0px 2px var(--neon-primary))
-    ;
+  color: var(--color-white);
+  filter: drop-shadow(0px 0px 0.5px var(--neon-primary))
+    drop-shadow(0px 0px 1.5px var(--neon-primary))
 }
 
 .navbar nav b.active .iconify {
