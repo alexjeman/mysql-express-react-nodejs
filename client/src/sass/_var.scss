@@ -1,4 +1,5 @@
 // Basic reset
+
 * {
   margin: 0;
   padding: 0;
@@ -15,15 +16,65 @@ body {
 
 // Colors
 
-$bg-dark-one: #1f242d;
-$bg-dark-two: #262d38;
+$bg-dark-one: rgb(29, 29, 30);
+$bg-dark-two: rgb(38, 38, 40);
 $bg-dark-three: #1d1d1d;
 $bg-dark-four: #00000033;
-$bg-dark-transparent: #2d303a4d;
-$bg-dark-transparent2: #10101179;
+$bg-dark-transparent: rgba(45, 48, 58, 0.3);
+$bg-dark-transparent2: rgba(16, 16, 17, 0.6);
 $color-white: #f4f4f4;
+$color-white2: #e8e8e8;
 $color-darken: #969696;
-$color-red: #e32d0d;
+$color-red: #e93d1f;
+$color-red2: #e35357;
 $neon-primary: #c8d2da;
 $neon-secondary: #fcfcfc;
 $linear-gradient-one: linear-gradient(to right, #ff29ff57, #4fff6c7e);
+
+// Global
+
+body {
+  background: $bg-dark-one;
+  color: $color-white;
+}
+
+.iconify {
+  color: $color-darken;
+}
+
+.container {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  margin-left: 60px;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.page-content-container {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  padding-left: 10rem;
+  position: relative;
+  height: 100vh;
+}
+
+// Loading animation
+.loader {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  .loading-text {
+    margin-top: 5rem;
+    text-align: center;
+    filter: drop-shadow(0px 0px 1.1px $neon-primary);
+  }
+  .rotate {
+    animation: rotating 4s linear infinite;
+  }
+}
