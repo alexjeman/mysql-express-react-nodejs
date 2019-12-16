@@ -1,12 +1,13 @@
-import React, { Fragment } from 'react'
-import spinner from './loader.gif'
+import React from "react";
+import Cube from "./Cube";
 
 const Spinner = () => {
   return (
-    <Fragment>
-      <img src={spinner} style={{ width: '200px', margin: 'auto', display: 'block' }} className="loader" alt="Loading..."/>
-    </Fragment>
-  )
-}
+    <div className="loader">
+      <Cube />
+      <h2 className="loading-text">Loading...</h2>
+    </div>
+  );
+};
 
-export default Spinner
+export default Spinner;
