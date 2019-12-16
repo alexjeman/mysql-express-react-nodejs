@@ -1,4 +1,7 @@
-@import 'sass/var';
-@import 'sass/navbar';
-@import 'sass/buttons';
-@import 'sass/old';
+@import "sass/var"; // Global Variables
+@import "sass/buttons"; // Buttons
+@import "sass/navbar"; // Navbar
+@import "sass/admin"; // Admin Panel page
+@import "sass/projects"; // Projects page
+@import 'sass/cube'; // Cube
+@import "sass/media"; // Media Queries
