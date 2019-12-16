@@ -1,0 +1,139 @@
+// Media Queries 
+
+@media screen and (max-height: 331px) {
+  .navbar nav {
+    transform: translateY(0rem);
+  }
+
+  .navbar nav a {
+    margin-bottom: -3px;
+  }
+
+  .navbar .social {
+    display: none;
+  }
+}
+
+@media screen and (min-height: 300px) {
+  .navbar nav {
+    transform: translateY(0rem);
+  }
+
+  .navbar nav a {
+    margin-bottom: -3px;
+  }
+}
+
+@media screen and (min-height: 350px) {
+  .navbar nav {
+    transform: translateY(1rem);
+  }
+
+  .navbar nav a {
+    margin-bottom: -3px;
+  }
+}
+
+@media screen and (min-height: 400px) {
+  .navbar nav {
+    transform: translateY(2.2rem);
+  }
+}
+
+@media screen and (min-height: 550px) {
+  .navbar nav {
+    transform: translateY(4rem);
+  }
+}
+
+@media screen and (min-height: 600px) {
+  .navbar nav {
+    transform: translateY(6rem);
+  }
+}
+
+@media screen and (min-height: 650px) {
+  .navbar nav {
+    transform: translateY(7.5rem);
+  }
+}
+
+@media screen and (min-height: 700px) {
+  .navbar nav {
+    transform: translateY(9.5rem);
+  }
+}
+
+@media screen and (min-height: 750px) {
+  .navbar nav {
+    transform: translateY(10rem);
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .navbar nav {
+    transform: translateY(12rem);
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .navbar nav {
+    transform: translateY(16rem);
+  }
+
+  .project-container {
+    margin: 1.5rem auto;
+    gap: 3rem 3rem;
+  }
+}
+
+@media screen and (min-height: 1300px) {
+  .navbar nav {
+    transform: translateY(24rem);
+  }
+}
+
+@media screen and (min-height: 2100px) {
+  .navbar nav {
+    transform: translateY(47rem);
+  }
+
+  .container {
+    margin-left: 8rem;
+  }
+
+  .navbar {
+    transform: translateX(-8rem);
+    font-size: 1.8rem;
+  }
+
+  .navbar nav a {
+    padding-bottom: 2.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .navbar .social {
+    .iconify {
+      padding-bottom: 2%;
+      padding-top: 2%;
+    }
+    .github {
+      margin-top: 0;
+    }
+  }
+  .app-logo {
+    height: 7rem;
+    width: auto;
+    margin-top: 1.2vh;
+    padding-bottom: 0.6rem;
+  }
+
+  .text-logo {
+    font-size: 1.8rem;
+  }
+
+  .project-container {
+    margin: 5rem auto;
+    gap: 5rem 3rem;
+  }
+}

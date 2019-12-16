@@ -1,0 +1,150 @@
+// Project Page
+
+.project-container {
+  width: 90%;
+  display: block;
+  margin: 1rem auto;
+  display: grid;
+  gap: 1rem 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(44vh, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(41vh, 1fr));
+  justify-items: center;
+}
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  margin: 0 auto;
+  width: 49vh;
+  height: 43vh;
+  object-fit: cover;
+}
+
+.card-side {
+  overflow: hidden;
+  position: relative;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 3px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-side-front {
+  width: 100%;
+  height: 100%;
+  background: $bg-dark-two;
+  text-align: center;
+}
+
+.card-side-back {
+  width: 100%;
+  height: 100%;
+  background: $bg-dark-two;
+  transform: rotateY(180deg);
+}
+
+.card-side-front .project-name {
+  width: 100%;
+  position: absolute;
+  background: $bg-dark-transparent;
+  bottom: 0;
+}
+
+.card:hover .card-side-front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card-side-back {
+  transform: rotateY(0);
+}
+
+// Project Item Popup
+
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $bg-dark-transparent2;
+  z-index: 9997;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.popup-close-main {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  width: 100vw;
+  height: 100vh;
+  cursor: default;
+}
+
+.popup-content {
+  z-index: 9999;
+  background: $bg-dark-two;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  width: 75%;
+  max-height: 90vh;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  color: $color-white;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.3s 0.4s;
+}
+
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup:target .popup-content {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-content .popup-left {
+  width: 33%;
+}
+
+.popup-content .popup-right {
+  width: 66%;
+  padding: 1rem 1rem;
+  .popup-close {
+    position: absolute;
+    top: 0.7rem;
+    right: 1rem;
+    font-size: 1.8rem;
+    &:hover .iconify {
+      color: $color-white;
+    }
+  }
+}
+
+.popup-img {
+  display: block;
+  width: 100%;
+}
+
+.popup-text {
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  hyphens: auto;
+}

@@ -22,7 +22,7 @@ const ProjectItem = ({ project }) => {
         </div>
       </div>
       <div className='popup' id={"popup" + id}>
-  <a href='#project-page' className='popup-close-main'>{" "}</a>
+        <a href='#project-page' className='popup-close-main'>{" "}</a>
         <div className='popup-content'>
           <div className='popup-left'>
             <img src={project_img} alt='' className='popup-img' />
@@ -30,7 +30,7 @@ const ProjectItem = ({ project }) => {
           </div>
           <div className='popup-right'>
             <a href='#project-page' className='popup-close'>
-              <i className='fas fa-times'></i>
+              <span className="iconify" data-icon="ion:close-sharp" data-inline="false"></span>
             </a>
             <h2 className='project-name'>{project_name}</h2>
             <p className='popup-text'>{project_description}</p>

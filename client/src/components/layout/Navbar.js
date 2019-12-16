@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import logo from "../../cute-skull.png";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
@@ -36,9 +35,9 @@ const Navbar = ({
 
   return (
     <div className='navbar'>
-      <NavLink to='/' alt='logo'>
-        <img src={logo} className='app-logo' alt='AJ' />
-        <div className='text-logo'>{title}</div>
+      <NavLink to='/' alt='logo' className="logo">
+        <div className='text-logo'>{title}<span>·</span>)</div>
+        <div className="border-bottom"></div>
       </NavLink>
       <nav>
         <NavLink exact to='/' activeClassName='active'>
@@ -81,7 +80,7 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  title: "Alex",
+  title: "J",
   iconGithub: "il:github",
   iconAbout: "fa-solid:user-circle",
   iconHome: "mdi:home",

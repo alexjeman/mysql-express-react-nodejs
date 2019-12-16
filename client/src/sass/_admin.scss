@@ -1,0 +1,20 @@
+// Admin Panel page
+
+.admin-page-container {
+  display: flex;
+  width: 80%;
+  margin: 10% auto;
+
+  .edit-form {
+    width: 40%;
+    
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .project-list {
+    width: 40%;
+  }
+}

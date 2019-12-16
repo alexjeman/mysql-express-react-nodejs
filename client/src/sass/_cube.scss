@@ -1,0 +1,82 @@
+// Animation
+
+
+// Scene
+
+:root {
+  --face-color: rgba(95, 95, 95, 0.7);
+}
+
+.scene {
+  width: 200px;
+  height: 200px;
+  perspective: 800px;
+}
+
+// Cube
+
+.cube {
+  width: 13rem;
+  height: 13rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: 1s;
+}
+
+.cube-face {
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  border: 1px solid rgba(33, 24, 100, 0.7);
+}
+
+.cube-face-front,
+.cube-face-right,
+.cube-face-back,
+.cube-face-left,
+.cube-face-top,
+.cube-face-bottom {
+  background: var(--face-color);
+}
+
+.cube-face-front  { transform: rotateY(   0deg) translateZ( 6rem); }
+.cube-face-right  { transform: rotateY(  90deg) translateZ( 6rem); }
+.cube-face-back   { transform: rotateY( 180deg) translateZ( 6rem); }
+.cube-face-left   { transform: rotateY( -90deg) translateZ( 6rem); }
+.cube-face-top    { transform: rotateX(  90deg) translateZ( 6rem); }
+.cube-face-bottom { transform: rotateX( -90deg) translateZ( 6rem); }
+
+@keyframes rotating {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(-4, 5, 7, -360deg);
+  }
+}
+
+.rotate {
+  animation: rotating 10s linear infinite;
+}
+
+
+// Cube color
+
+.animated-bg {
+  background: linear-gradient(-45deg, rgba(35, 213, 171, 0.7), rgba(196, 113, 237, 0.7), rgba(18, 194, 233, 0.7), rgba(246, 79, 89, 0.7));
+  background-size: 400% 400%;
+  animation: change 5s ease-in-out infinite;
+}
+
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
