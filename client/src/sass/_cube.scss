@@ -8,16 +8,16 @@
 }
 
 .scene {
-  width: 200px;
-  height: 200px;
+  width: 8rem;
+  height: 8rem;
   perspective: 800px;
 }
 
 // Cube
 
 .cube {
-  width: 13rem;
-  height: 13rem;
+  width: 8rem;
+  height: 8rem;
   position: relative;
   transform-style: preserve-3d;
   transform: translateZ(-100px);
@@ -26,8 +26,8 @@
 
 .cube-face {
   position: absolute;
-  width: 12rem;
-  height: 12rem;
+  width: 8rem;
+  height: 8rem;
   border: 1px solid rgba(33, 24, 100, 0.7);
 }
 
@@ -40,12 +40,12 @@
   background: var(--face-color);
 }
 
-.cube-face-front  { transform: rotateY(   0deg) translateZ( 6rem); }
-.cube-face-right  { transform: rotateY(  90deg) translateZ( 6rem); }
-.cube-face-back   { transform: rotateY( 180deg) translateZ( 6rem); }
-.cube-face-left   { transform: rotateY( -90deg) translateZ( 6rem); }
-.cube-face-top    { transform: rotateX(  90deg) translateZ( 6rem); }
-.cube-face-bottom { transform: rotateX( -90deg) translateZ( 6rem); }
+.cube-face-front  { transform: rotateY(   0deg) translateZ( 4rem); }
+.cube-face-right  { transform: rotateY(  90deg) translateZ( 4rem); }
+.cube-face-back   { transform: rotateY( 180deg) translateZ( 4rem); }
+.cube-face-left   { transform: rotateY( -90deg) translateZ( 4rem); }
+.cube-face-top    { transform: rotateX(  90deg) translateZ( 4rem); }
+.cube-face-bottom { transform: rotateX( -90deg) translateZ( 4rem); }
 
 @keyframes rotating {
   from {

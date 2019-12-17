@@ -1,4 +1,4 @@
-// Media Queries 
+// Media Queries
 
 @media screen and (max-height: 331px) {
   .navbar nav {
@@ -9,6 +9,12 @@
     margin-bottom: -3px;
   }
 
+  .navbar .social {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 410px) {
   .navbar .social {
     display: none;
   }
@@ -76,7 +82,7 @@
   }
 }
 
-@media screen and (min-height: 1000px) {
+@media screen and (min-height: 950px) {
   .navbar nav {
     transform: translateY(16rem);
   }
