@@ -7,7 +7,8 @@ const ProjectItem = ({ project }) => {
     project_description,
     project_sample,
     project_link,
-    project_img
+    project_img,
+    project_img_pages
   } = project;
 
   return (
@@ -31,7 +32,7 @@ const ProjectItem = ({ project }) => {
         <div className='popup-content'>
           <div className='popup-left'>
             <img src={project_img} alt='' className='popup-img' />
-            <img src={project_img} alt='' className='popup-img' />
+            <img src={project_img_pages} alt='' className='popup-img' />
           </div>
           <div className='popup-right'>
             <a href='#project-page' className='popup-close'>

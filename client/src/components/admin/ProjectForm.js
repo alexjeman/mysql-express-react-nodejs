@@ -15,7 +15,8 @@ const ProjectForm = () => {
         project_description: "",
         project_sample: "",
         project_link: "",
-        project_img: ""
+        project_img: "",
+        project_img_pages: ""
       });
     }
   }, [projectContext, current]);
@@ -25,7 +26,8 @@ const ProjectForm = () => {
     project_description: "",
     project_sample: "",
     project_link: "",
-    project_img: ""
+    project_img: "",
+    project_img_pages: ""
   });
 
   const {
@@ -33,7 +35,8 @@ const ProjectForm = () => {
     project_description,
     project_sample,
     project_link,
-    project_img
+    project_img,
+    project_img_pages
   } = project;
 
   const onChange = e =>
@@ -44,10 +47,10 @@ const ProjectForm = () => {
     if (current === null) {
       addProject(project);
     } else {
-      updateProject(project)
+      updateProject(project);
     }
 
-    clearAll()
+    clearAll();
   };
 
   const clearAll = () => {
@@ -89,6 +92,13 @@ const ProjectForm = () => {
         placeholder='Project Image URL'
         name='project_img'
         value={project_img}
+        onChange={onChange}
+      />
+      <input
+        type='text'
+        placeholder='Project Image URL secondary'
+        name='project_img_pages'
+        value={project_img_pages}
         onChange={onChange}
       />
       <div>
