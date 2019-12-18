@@ -4,6 +4,9 @@ import Navbar from "./components/layout/Navbar";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Work from "./components/pages/Work";
+import Skills from "./components/pages/Skills";
+import Contact from "./components/pages/Contact";
+import Info from "./components/pages/Info";
 import Admin from "./components/pages/Admin";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -30,8 +33,11 @@ const App = () => {
                 <Notifications />
                 <Switch>
                   <Route exact path='/' component={Home} />
-                  <Route exact path='/about' component={About} />
                   <Route exact path='/work' component={Work} />
+                  <Route exact path='/skills' component={Skills} />
+                  <Route exact path='/contact' component={Contact} />
+                  <Route exact path='/about' component={About} />
+                  <Route exact path='/info' component={Info} />
                   <PrivateRoute exact path='/admin' component={Admin} />
                   <PrivateRoute exact path='/admin/register' component={Register} />
                   <Route exact path='/admin/login' component={Login} />
