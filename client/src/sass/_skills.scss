@@ -1,0 +1,45 @@
+.page-content-container {
+  h1 {
+    line-height: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  h2 {
+    padding-bottom: 1rem;
+  }
+
+  .skills {
+    display: block;
+    width: 90%;
+    margin: 10% 10%;
+  }
+
+  // Cube size
+  .scene {
+    margin: -5% auto;
+    width: 12rem;
+    height: 12rem;
+
+    .cube {
+      width: 12rem;
+      height: 12rem;
+    }
+  
+    .cube-face {
+      position: absolute;
+      width: 12rem;
+      height: 12rem;
+    }
+  
+    .cube-face-front  { transform: rotateY(   0deg) translateZ( 6rem); }
+    .cube-face-right  { transform: rotateY(  90deg) translateZ( 6rem); }
+    .cube-face-back   { transform: rotateY( 180deg) translateZ( 6rem); }
+    .cube-face-left   { transform: rotateY( -90deg) translateZ( 6rem); }
+    .cube-face-top    { transform: rotateX(  90deg) translateZ( 6rem); }
+    .cube-face-bottom { transform: rotateX( -90deg) translateZ( 6rem); }
+
+    .rotate {
+      animation: rotating 25s linear infinite;
+    }
+  }
+}
