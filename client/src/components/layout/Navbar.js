@@ -36,7 +36,7 @@ const Navbar = ({
   return (
     <div className='navbar'>
       <NavLink to='/' alt='logo' className="logo">
-        <div className='text-logo'>{title}<span>·</span>)</div>
+        <div className='text-logo'>{title}<span>■</span></div>
         <div className="border-bottom"></div>
       </NavLink>
       <nav>
