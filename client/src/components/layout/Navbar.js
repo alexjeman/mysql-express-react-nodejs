@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import logo from "../../logo.png";
 import { NavLink } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 import ProjectContext from "../../context/project/projectContext";
@@ -36,7 +37,8 @@ const Navbar = ({
   return (
     <div className='navbar'>
       <NavLink to='/' alt='logo' className="logo">
-        <div className='text-logo'>{title}<span>■</span></div>
+        <img src={logo} className='app-logo' alt='AJ' />
+        {/* <div className='text-logo'>{title}<span className="dot">■</span></div> */}
         <div className="border-bottom"></div>
       </NavLink>
       <nav>

@@ -41,22 +41,26 @@
     }
   }
 
-  .text-logo {
-    color: $color-white2;
-    font-size: 2rem;
-    font-weight: 700;
-    padding-top: 33%;
-    padding-bottom: 40%;
-    font-family: "Libre Baskerville";
-    text-shadow: 0px 0px 2px $color-white;
-    span {
-      color: $color-red2;
-      font-size: 2rem;
-      text-shadow: 0px 0px 2px $color-red;
-    }
-  }
+  // .text-logo {
+  //   color: $color-white2;
+  //   font-size: 2rem;
+  //   font-weight: 700;
+  //   padding-top: 33%;
+  //   padding-bottom: 40%;
+  //   font-family: "Libre Baskerville";
+  //   text-shadow: 0px 0px 2px $color-white;
+  //   .dot {
+  //     color: #ff0055;
+  //     text-shadow: 0px 0px 2px #ff0055;
+  //   }
+  // }
 
   .logo {
+    .app-logo {
+      height: 2.55rem;
+      width: auto;
+      margin-top: 1vh;
+    }
     .border-bottom {
       border-bottom: 0.8px solid $color-darken;
       box-shadow: 0px 0px 0.7px $color-white;

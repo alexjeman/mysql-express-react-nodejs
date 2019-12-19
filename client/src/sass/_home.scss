@@ -9,4 +9,23 @@
     width: 90%;
     margin: 10% 10%;
   }
+
+  @keyframes toogle {
+    0% {
+      opacity: 0;
+    }
+    29% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .console-toogle {
+    animation: toogle 1.4s linear infinite;
+  }
 }
