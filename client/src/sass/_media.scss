@@ -82,6 +82,14 @@
   }
 }
 
+@media screen and (max-width: 700px) {
+  .page-content-container {
+    .scene {
+      margin-top: 20%;
+    }
+  }
+}
+
 @media screen and (min-height: 950px) {
   .navbar nav {
     transform: translateY(16rem);
