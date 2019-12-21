@@ -25,10 +25,10 @@ $font-secondary: "Libre Baskerville";
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
-  a:visited,
-  a:active {
-    color: $color-white;
-  }
+}
+
+h1,h2,h3 {
+  padding-bottom: 20px;
 }
 
 html,
