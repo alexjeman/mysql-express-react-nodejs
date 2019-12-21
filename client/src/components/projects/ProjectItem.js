@@ -14,7 +14,7 @@ const ProjectItem = ({ project }) => {
   return (
     <div className='project-card'>
       <div className='card'>
-        <a href={"#popup" + id}>
+        <a href={"#popup" + id} className="popup-link">
           <div className='card-side card-side-front'>
             <h3 className='project-name'>{project_name}</h3>
             <img src={project_img} alt='' />
@@ -44,10 +44,10 @@ const ProjectItem = ({ project }) => {
             </a>
             <h2 className='project-name'>{project_name}</h2>
             <p className='popup-text'>{project_description}</p>
-            <a href={project_sample} target='_blank' rel='noopener noreferrer'>
+            <a href={project_sample} target='_blank' className="btn" rel='noopener noreferrer'>
               Code Sample
             </a>
-            <a href={project_link} target='_blank' rel='noopener noreferrer'>
+            <a href={project_link} target='_blank' className="btn" rel='noopener noreferrer'>
               View Live
             </a>
           </div>

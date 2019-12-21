@@ -19,6 +19,11 @@
   width: 49vh;
   height: 43vh;
   object-fit: cover;
+  .popup-link {
+    &:visited {
+      color: $color-white;
+    }
+  }
 }
 
 .card-side {
@@ -108,10 +113,12 @@
   min-height: 76vh;
   box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
   border-radius: 3px;
-  color: $color-white;
   display: flex;
   overflow: hidden;
   transition: all 0.3s 0.4s;
+  .btn {
+    margin: 20px;
+  }
 }
 
 .popup:target {
