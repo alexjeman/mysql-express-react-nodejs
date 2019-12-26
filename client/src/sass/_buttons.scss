@@ -1,13 +1,17 @@
 .btn {
+  display: block;
   color: #f1f1f1;
   padding: 5px 17px;
   font-size: 18px;
   overflow: hidden;
   border: 2px solid #c9c9c9;
   border-radius: 50px;
+  width: 150px;
+  text-align: center;
   cursor: pointer;
   transition: all 0.2s ease-out;
   box-sizing: border-box;
+  white-space: nowrap;
   &:hover {
     color: $bg-dark-one;
     background: #f4f4f4;
@@ -25,4 +29,11 @@
     color: $color-white;
     text-shadow: 0 0 2px $color-darken;
   }
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0 2rem;
+  width: 330px;
 }

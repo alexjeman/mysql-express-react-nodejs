@@ -82,10 +82,42 @@
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 950px) {
   .page-content-container {
     .scene {
       margin-top: 20%;
+    }
+  }
+
+  .popup-content {
+    min-height: 83%;
+    width: 97%;
+    .popup-left {
+      position: absolute;
+      bottom: 15%;
+      order: 2;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      display: flex;
+      .popup-img {
+        
+        margin: 3% auto;
+        max-height: 47%;
+        max-width: 47%;
+      }
+    }
+
+    .popup-right {
+      order: 1;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      padding: 2rem 3rem;
+      .btn-container {
+        position: absolute;
+        bottom: 2%;
+        left: 45%;
+        transform: translateX(-50%);
+      }
     }
   }
 }

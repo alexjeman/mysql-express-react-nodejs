@@ -14,7 +14,7 @@ const ProjectItem = ({ project }) => {
   return (
     <div className='project-card'>
       <div className='card'>
-        <a href={"#popup" + id} className="popup-link">
+        <a href={"#popup" + id} className='popup-link'>
           <div className='card-side card-side-front'>
             <h3 className='project-name'>{project_name}</h3>
             <img src={project_img} alt='' />
@@ -35,21 +35,33 @@ const ProjectItem = ({ project }) => {
             <img src={project_img_pages} alt='' className='popup-img' />
           </div>
           <div className='popup-right'>
-            <a href='#project-page' className='popup-close'>
-              <span
-                className='iconify'
-                data-icon='ion:close-sharp'
-                data-inline='false'
-              ></span>
-            </a>
+          <a href='#project-page' className='popup-close'>
+            <span
+              className='iconify'
+              data-icon='ion:close-sharp'
+              data-inline='false'
+            ></span>
+          </a>
             <h2 className='project-name'>{project_name}</h2>
             <p className='popup-text'>{project_description}</p>
-            <a href={project_sample} target='_blank' className="btn btn-animated" rel='noopener noreferrer'>
-              Code Sample
-            </a>
-            <a href={project_link} target='_blank' className="btn btn-animated" rel='noopener noreferrer'>
-              View Live
-            </a>
+            <div className='btn-container'>
+              <a
+                href={project_sample}
+                target='_blank'
+                className='btn btn-animated'
+                rel='noopener noreferrer'
+              >
+                Code Sample
+              </a>
+              <a
+                href={project_link}
+                target='_blank'
+                className='btn btn-animated'
+                rel='noopener noreferrer'
+              >
+                View Live
+              </a>
+            </div>
           </div>
         </div>
       </div>
