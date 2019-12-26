@@ -70,7 +70,7 @@ const Login = props => {
             required
           />
         </div>
-        <input type='submit' value='Login' className='btn' />
+        <input type='submit' value='Login' className='btn btn-animated' />
       </form>
     </div>
   );

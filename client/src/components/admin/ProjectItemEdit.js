@@ -26,8 +26,8 @@ const ProjectItemEdit = ({ project }) => {
         <li>{project_sample}</li>
       </ul>
       <p>
-        <button className='btn' onClick={() => setCurrent(project)}>Edit</button>
-        <button className='btn' onClick={onDelete}>Delete</button>
+        <button className='btn btn-animated' onClick={() => setCurrent(project)}>Edit</button>
+        <button className='btn btn-animated' onClick={onDelete}>Delete</button>
       </p>
     </div>
   );

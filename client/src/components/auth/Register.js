@@ -37,7 +37,6 @@ const Register = props => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log("Register Submit");
     if (name === "" || email === "" || password === "") {
       setNotification("Please enter all fields", "danger");
     } else if (password !== password2) {
@@ -98,7 +97,7 @@ const Register = props => {
             minLength='6'
           />
         </div>
-        <input type='submit' value='Register' className='btn' />
+        <input type='submit' value='Register' className='btn btn-animated' />
       </form>
     </div>
   );

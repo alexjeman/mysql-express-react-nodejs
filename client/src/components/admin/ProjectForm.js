@@ -105,12 +105,12 @@ const ProjectForm = () => {
         <input
           type='submit'
           value={current ? "Save" : "Add Project"}
-          className='btn'
+          className='btn btn-animated'
         />
       </div>
       {current && (
         <div>
-          <button className='btn' onClick={clearAll}>
+          <button className='btn btn-animated' onClick={clearAll}>
             Clear
           </button>
         </div>
